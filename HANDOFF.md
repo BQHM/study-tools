@@ -19,6 +19,7 @@
 - 使用 `knowledge-answer-bank.md` 沉淀面试问题答案。
 - 后续优先接管 `interview-assistant`，因为它比 `FixLedger` 小，更适合真正吃透。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
+- 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
 
 ## 已完成
 
@@ -42,7 +43,9 @@
 - 创建 `AGENTS.md`：
   - 固化“预习计划 -> 教材讲解 -> 高频八股 -> 项目关联 -> 追问训练 -> 答案沉淀 -> 学习记录 -> handoff 同步”的协作流程。
   - 明确 Codex 要同时扮演架构师、工程师和老师。
+  - 规定项目相关问题优先从 `https://github.com/BQHM` 获取最新上下文。
   - 规定默认下一步是整理 `interview-assistant` 项目卡片。
+- 已初始化本地 Git 仓库并推送到 `https://github.com/BQHM/study-tools`。
 - 明确了学习原则：
   - 不让 AI 直接生成完整项目。
   - 用 AI 解释、Review、追问、辅助复盘。
@@ -50,29 +53,13 @@
 
 ## 当前未完成
 
-- 当前目录还没有初始化 Git 仓库。
-- 还没有推送到远程仓库。
-- 还没有开始逐日学习记录。
+- 还没有正式进入第一阶段 Day 1：整理 `interview-assistant` 项目卡片。
+- 还没有开始项目话术录音和模拟追问。
 - 还没有正式接管 `interview-assistant` 的新功能。
 
 ## 下一步建议
 
-### 第一步：初始化同步仓库
-
-在当前目录执行：
-
-```bash
-git init
-git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
-git commit -m "docs: initialize java interview study repo"
-git branch -M main
-git remote add origin https://github.com/BQHM/study-tools.git
-git push -u origin main
-```
-
-如果远程仓库已经有 README，先 `git pull --rebase origin main` 再 push。
-
-### 第二步：开始第 1 周复习
+### 第一步：开始第 1 周复习
 
 从 `java-backend-interview-plan.md` 的第一阶段开始，不要直接跳到八股：
 
@@ -89,7 +76,7 @@ Day 3：java-core-lab 学习实验卡片
 HashMap -> ConcurrentHashMap -> volatile -> ThreadLocal -> 线程池 -> MySQL 索引 -> Redis 缓存
 ```
 
-### 第三步：用 java-core-lab 做实验
+### 第二步：用 java-core-lab 做实验
 
 每学一个主题，到本机的 `java-core-lab` 项目目录跑对应 Demo。
 
@@ -112,7 +99,7 @@ D:\work\work_space\Project\java-core-lab
 ## 下次打开 Codex 时可以这样说
 
 ```text
-请先阅读 HANDOFF.md、study-log.md 和 java-backend-interview-plan.md，然后按第一阶段 Day 1 帮我整理 interview-assistant 项目卡片。
+请先阅读 HANDOFF.md、study-log.md 和 java-backend-interview-plan.md，然后从 https://github.com/BQHM 获取 interview-assistant 的最新项目内容，按第一阶段 Day 1 帮我整理项目卡片。
 ```
 
 或者：

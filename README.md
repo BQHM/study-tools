@@ -8,6 +8,14 @@
 https://github.com/BQHM/study-tools
 ```
 
+项目源码来源：
+
+```text
+https://github.com/BQHM
+```
+
+后续做项目卡片、项目追问和简历话术时，优先读取 GitHub 上的最新项目内容，再结合本地副本和学习笔记。
+
 ## 当前目标
 
 1. 恢复 Java 后端基本盘：集合、并发、JVM、Spring、MySQL、Redis、MQ。
@@ -81,6 +89,12 @@ study-log.md
 
 ```text
 根据 HANDOFF.md，帮我继续接管 interview-assistant 项目，今天只做一个小切片。
+```
+
+项目相关任务可以这样说：
+
+```text
+请先从 https://github.com/BQHM 获取 interview-assistant 的最新 README 和代码结构，再帮我整理项目卡片。
 ```
 
 重要原则：

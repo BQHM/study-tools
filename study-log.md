@@ -11,6 +11,7 @@
 ### 已完成
 
 - 创建 `AGENTS.md`，固化用户与 Codex 的学习协作流程。
+- 更新 `AGENTS.md`，规定项目相关提问优先从 `https://github.com/BQHM` 获取最新上下文。
 - 创建 `java-ai-interview-study-guide.md`。
 - 创建 `knowledge-answer-bank.md`，用于沉淀可直接讲的知识点答案。
 - 阅读知识星球文章《Java 后端面试通关全阶指南（涵盖后端通用体系）》的核心结构。
@@ -27,16 +28,16 @@
 - 以后每学一个知识点，都要同步补充到 `knowledge-answer-bank.md`。
 - 学习顺序改为先项目与简历深挖，再 Java/MySQL/Redis，不直接从八股开刷。
 - 之后 Codex 必须按“预习计划 -> 教材讲解 -> 八股回答 -> 项目关联 -> 追问训练 -> 答案沉淀 -> 日志和 handoff”的闭环推进。
+- 项目相关问题不能只凭记忆回答，要优先读取 GitHub 上的最新 README、目录结构和关键源码。
 - 跨电脑同步时，Git 负责同步文件，`HANDOFF.md` 负责同步上下文。
 
 ### 还不清楚
 
-- 远程仓库放 GitHub、Gitee 还是私有 Git 服务。
+- 是否需要为每个项目单独维护项目卡片文档，还是先统一放在本仓库。
 - 是否把其他项目也统一纳入一个学习总仓库，还是保持项目各自独立。
 
 ### 下一步
 
-- 初始化 Git 仓库并推送到远程。
-- 按 `java-backend-interview-plan.md` 第一阶段 Day 1，整理 `interview-assistant` 项目卡片。
+- 按 `java-backend-interview-plan.md` 第一阶段 Day 1，先从 GitHub 获取 `interview-assistant` 最新内容，再整理项目卡片。
 - 写 `interview-assistant` 的 30 秒、1 分钟、3 分钟话术。
 - 从项目中反推必会题，再补充到 `knowledge-answer-bank.md`。
