@@ -10,6 +10,7 @@
 
 ### 已完成
 
+- 创建 `AGENTS.md`，固化用户与 Codex 的学习协作流程。
 - 创建 `java-ai-interview-study-guide.md`。
 - 创建 `knowledge-answer-bank.md`，用于沉淀可直接讲的知识点答案。
 - 阅读知识星球文章《Java 后端面试通关全阶指南（涵盖后端通用体系）》的核心结构。
@@ -25,6 +26,7 @@
 - 面试资料不能只背题，要做到：概念、Demo、项目、追问。
 - 以后每学一个知识点，都要同步补充到 `knowledge-answer-bank.md`。
 - 学习顺序改为先项目与简历深挖，再 Java/MySQL/Redis，不直接从八股开刷。
+- 之后 Codex 必须按“预习计划 -> 教材讲解 -> 八股回答 -> 项目关联 -> 追问训练 -> 答案沉淀 -> 日志和 handoff”的闭环推进。
 - 跨电脑同步时，Git 负责同步文件，`HANDOFF.md` 负责同步上下文。
 
 ### 还不清楚

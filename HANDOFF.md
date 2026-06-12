@@ -13,6 +13,7 @@
 当前重点：
 
 - 先恢复已有知识和项目表达，不急着开新大项目。
+- 已将用户与 Codex 的固定协作流程写入 `AGENTS.md`。
 - 使用 `java-ai-interview-study-guide.md` 作为主复习资料。
 - 使用 `java-backend-interview-plan.md` 作为 6-8 周执行计划。
 - 使用 `knowledge-answer-bank.md` 沉淀面试问题答案。
@@ -38,6 +39,10 @@
 - 根据知识星球文章《Java 后端面试通关全阶指南（涵盖后端通用体系）》创建了 `java-backend-interview-plan.md`：
   - 采用“项目与简历深挖 -> Java/MySQL/Redis -> 框架与系统设计 -> 计算机基础 -> 分布式高并发 -> JVM -> 面试冲刺”的顺序。
   - 按个人情况强化了项目接管、AI 辅助开发的诚实表达和跨电脑 handoff。
+- 创建 `AGENTS.md`：
+  - 固化“预习计划 -> 教材讲解 -> 高频八股 -> 项目关联 -> 追问训练 -> 答案沉淀 -> 学习记录 -> handoff 同步”的协作流程。
+  - 明确 Codex 要同时扮演架构师、工程师和老师。
+  - 规定默认下一步是整理 `interview-assistant` 项目卡片。
 - 明确了学习原则：
   - 不让 AI 直接生成完整项目。
   - 用 AI 解释、Review、追问、辅助复盘。
@@ -58,7 +63,7 @@
 
 ```bash
 git init
-git add README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
+git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
 git commit -m "docs: initialize java interview study repo"
 git branch -M main
 git remote add origin https://github.com/BQHM/study-tools.git
