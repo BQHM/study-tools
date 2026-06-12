@@ -19,7 +19,9 @@ https://github.com/BQHM/study-tools
 
 | 文件 | 用途 |
 | --- | --- |
+| `java-backend-interview-plan.md` | 按 JavaGuide 面试通关指南改造的个人 6-8 周学习计划 |
 | `java-ai-interview-study-guide.md` | Java 后端与 AI 工程化面试学习资料 |
+| `knowledge-answer-bank.md` | 高频知识点答案库，用来沉淀可直接讲的答案 |
 | `HANDOFF.md` | 两台电脑 / 两个 Codex 之间交接当前进度 |
 | `study-log.md` | 每日学习记录和复盘 |
 | `.gitignore` | 避免提交本地临时文件、密钥和构建产物 |
@@ -47,7 +49,7 @@ study-log.md 最近一条记录
 
 ```bash
 git status
-git add README.md HANDOFF.md study-log.md java-ai-interview-study-guide.md .gitignore
+git add README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```

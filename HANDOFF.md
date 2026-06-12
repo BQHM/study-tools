@@ -14,6 +14,8 @@
 
 - 先恢复已有知识和项目表达，不急着开新大项目。
 - 使用 `java-ai-interview-study-guide.md` 作为主复习资料。
+- 使用 `java-backend-interview-plan.md` 作为 6-8 周执行计划。
+- 使用 `knowledge-answer-bank.md` 沉淀面试问题答案。
 - 后续优先接管 `interview-assistant`，因为它比 `FixLedger` 小，更适合真正吃透。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 
@@ -30,6 +32,12 @@
   - 高并发项目追问。
   - AI 工程化、RAG、Embedding、Prompt、结构化输出。
   - 两个月学习路线和每日复习模板。
+- 创建了 `knowledge-answer-bank.md`：
+  - 用固定答案卡模板存储高频面试题答案。
+  - 已覆盖 HashMap、ConcurrentHashMap、volatile、ThreadLocal、线程池、事务失效、JWT、MySQL 索引、MVCC、Redis 缓存、Redis Lua、MQ、RAG、AI 幻觉和高并发下单。
+- 根据知识星球文章《Java 后端面试通关全阶指南（涵盖后端通用体系）》创建了 `java-backend-interview-plan.md`：
+  - 采用“项目与简历深挖 -> Java/MySQL/Redis -> 框架与系统设计 -> 计算机基础 -> 分布式高并发 -> JVM -> 面试冲刺”的顺序。
+  - 按个人情况强化了项目接管、AI 辅助开发的诚实表达和跨电脑 handoff。
 - 明确了学习原则：
   - 不让 AI 直接生成完整项目。
   - 用 AI 解释、Review、追问、辅助复盘。
@@ -50,7 +58,7 @@
 
 ```bash
 git init
-git add README.md HANDOFF.md study-log.md java-ai-interview-study-guide.md .gitignore
+git add README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
 git commit -m "docs: initialize java interview study repo"
 git branch -M main
 git remote add origin https://github.com/BQHM/study-tools.git
@@ -61,24 +69,19 @@ git push -u origin main
 
 ### 第二步：开始第 1 周复习
 
-从 `java-ai-interview-study-guide.md` 的这些章节开始：
+从 `java-backend-interview-plan.md` 的第一阶段开始，不要直接跳到八股：
 
 ```text
-1. Java 基础高频题
-2. 集合框架高频题
-3. Java 并发高频题
+第一阶段：项目与简历深挖
+Day 1：interview-assistant 项目卡片
+Day 2：FixLedger 项目卡片
+Day 3：java-core-lab 学习实验卡片
 ```
 
-每天只选一个主题，例如：
+完成第一阶段后，再进入 Java/MySQL/Redis：
 
 ```text
-Day 1：HashMap
-Day 2：ConcurrentHashMap
-Day 3：volatile + synchronized
-Day 4：ThreadLocal
-Day 5：线程池
-Day 6：AQS
-Day 7：复盘和模拟面试
+HashMap -> ConcurrentHashMap -> volatile -> ThreadLocal -> 线程池 -> MySQL 索引 -> Redis 缓存
 ```
 
 ### 第三步：用 java-core-lab 做实验
@@ -104,13 +107,13 @@ D:\work\work_space\Project\java-core-lab
 ## 下次打开 Codex 时可以这样说
 
 ```text
-请先阅读 HANDOFF.md 和 study-log.md，然后根据 java-ai-interview-study-guide.md 带我复习 HashMap，并结合 java-core-lab 里的 Demo 做讲解和追问。
+请先阅读 HANDOFF.md、study-log.md 和 java-backend-interview-plan.md，然后按第一阶段 Day 1 帮我整理 interview-assistant 项目卡片。
 ```
 
 或者：
 
 ```text
-请根据 HANDOFF.md，帮我开始接管 interview-assistant，今天只做异步简历分析任务的设计文档，不直接生成代码。
+请根据 java-backend-interview-plan.md，今天只推进一个学习主题，并把答案沉淀到 knowledge-answer-bank.md。
 ```
 
 ## 注意事项
