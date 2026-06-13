@@ -4,7 +4,7 @@
 
 ## 当前日期
 
-2026-06-12
+2026-06-13
 
 ## 当前阶段
 
@@ -20,12 +20,13 @@
 - 后续优先接管 `interview-assistant`，因为它比 `FixLedger` 小，更适合真正吃透。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 - 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
+- 重要项目边界：`interview-guide` 不是用户项目，而是导师项目/参考项目；简历和面试项目经历只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人项目。
 
 ## 已完成
 
 - 整理了父目录项目现状：
   - `FixLedger`：AI 开发的完整业务项目，可作为后续代码审查、重构、测试补充对象。
-  - `interview-assistant`：在 AI 辅助下参考 `interview-guide` 开发，适合作为主接管项目。
+  - `interview-assistant`：用户开发中的主接管项目，在 AI 辅助下参考导师项目 `interview-guide` 的功能形态和设计思路逐步实现。
   - `java-core-lab`：AI 辅助学习实验仓，适合复习 Java 集合、并发、JVM 排查。
   - `truckfarm`：旧项目和现代化重构设想，目前不适合作为主简历项目。
 - 创建了 `java-ai-interview-study-guide.md`：
@@ -45,6 +46,7 @@
   - 明确 Codex 要同时扮演架构师、工程师和老师。
   - 规定项目相关问题优先从 `https://github.com/BQHM` 获取最新上下文。
   - 规定默认下一步是整理 `interview-assistant` 项目卡片。
+  - 补充规则：`interview-guide` 是导师项目/参考项目，不属于用户简历项目经历。
 - 已初始化本地 Git 仓库并推送到 `https://github.com/BQHM/study-tools`。
 - 明确了学习原则：
   - 不让 AI 直接生成完整项目。
@@ -56,6 +58,7 @@
 - 还没有正式进入第一阶段 Day 1：整理 `interview-assistant` 项目卡片。
 - 还没有开始项目话术录音和模拟追问。
 - 还没有正式接管 `interview-assistant` 的新功能。
+- 还需要把 `interview-assistant` 的项目话术统一改成“不出现 guide 项目经历，只讲 assistant 的真实实现和接管计划”。
 
 ## 下一步建议
 

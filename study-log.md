@@ -2,6 +2,32 @@
 
 > 每次学习结束后更新。重点写“学会了什么、还不会什么、下一步做什么”，不用写长篇流水账。
 
+## 2026-06-13
+
+### 今日主题
+
+纠正 `interview-assistant` 和 `interview-guide` 的项目归属边界。
+
+### 已完成
+
+- 明确 `interview-guide` 不是用户项目，而是导师项目/参考项目。
+- 明确简历和面试项目经历中只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人成果。
+- 更新 `AGENTS.md`，加入 `interview-guide` 边界规则，后续 Codex 必须按该口径回答。
+- 更新 `HANDOFF.md` 和 `java-backend-interview-plan.md`，把 Day 1 项目话术收敛到 `interview-assistant` 本身。
+- 更新 `knowledge-answer-bank.md`，把 RAG 的项目关联改成“参考项目只能作为学习和功能规划参考”。
+
+### 今日理解
+
+- 面试里可以说自己参考过成熟系统或导师项目的功能拆分思路，但不能把参考项目讲成自己的项目。
+- `interview-assistant` 的正确定位是：用户正在接管和开发的后端 MVP，当前重点是简历解析分析、面试会话、答题推进和报告生成。
+- 简历表达要围绕真实实现、自己能讲清的模块、后续接管计划，而不是围绕参考项目。
+
+### 下一步
+
+- 继续 Day 1：整理 `interview-assistant` 项目卡片。
+- 重新写 `interview-assistant` 的 30 秒、1 分钟、3 分钟项目话术，确保不把 `interview-guide` 写成个人经历。
+- 把项目必会题补入 `knowledge-answer-bank.md`。
+
 ## 2026-06-12
 
 ### 今日主题

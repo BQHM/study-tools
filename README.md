@@ -103,3 +103,4 @@ study-log.md
 - 每天只推进一个小主题。
 - 每个知识点都要落到：概念、Demo、项目、追问。
 - 每次换电脑前必须更新 handoff。
+- `interview-guide` 是导师项目/参考项目，不写入个人简历项目经历；个人项目只围绕 `interview-assistant` 讲真实实现和接管计划。
