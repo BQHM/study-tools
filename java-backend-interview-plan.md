@@ -429,7 +429,79 @@ Slice 5：JMeter 压测报告
 5. 秒杀系统能从入口讲到库存回滚。
 ```
 
-## 10. 每日固定流程
+## 10. AI Agent 工程师 JD 对齐路线
+
+用户当前看到的 AI Agent 工程师 JD，要求的不只是 Java 八股，也不是纯算法训练，而是：
+
+```text
+Java 后端基本盘
++ LLM 应用工程
++ Agent 工具调用、记忆和规划
++ B 端产品落地和方案表达
+```
+
+因此后续学习需要做一个调整：
+
+```text
+每个八股知识点，都要绑定到 Agent 项目中的工程问题。
+```
+
+### 岗位能力拆解
+
+| JD 要求 | 学习重点 | 项目落点 |
+| --- | --- | --- |
+| 需求拆解和项目排期 | 技术方案、任务拆分、风险说明 | `interview-assistant` 小切片计划 |
+| 原型到上线 | 接口、状态、存储、日志、异常、降级 | 简历分析、面试评估、报告链路 |
+| 多模态交互 | 文件、图片、语音输入的工程接入 | 简历文件解析，后续语音面试 |
+| 工具调用 | Function Calling / Tool Calling | 出题工具、评分工具、知识库检索工具 |
+| 记忆增强 | 会话记忆、长期记忆、用户画像 | 用户薄弱点记忆表 |
+| 自主规划 | Plan-and-Execute、状态机 | 生成学习计划和下一轮训练任务 |
+| 大模型生态 | Spring AI、RAG、Agent 框架 | AI 面试准备 Agent |
+
+### 八股优先级调整
+
+为了适配这个 JD，八股学习优先级调整为：
+
+1. Spring Boot、REST 接口、参数校验、统一响应、异常处理。
+2. MySQL 表设计、索引、事务、唯一约束。
+3. Redis 缓存、限流、会话状态、分布式锁。
+4. 线程池、异步任务、MQ。
+5. HashMap、ConcurrentHashMap、ThreadLocal。
+6. JVM 排查基础。
+
+这不代表集合和并发不重要，而是面向 AI Agent 产品落地时，要优先能解释“系统怎么稳定运行、怎么存状态、怎么降级、怎么追踪任务”。
+
+### interview-assistant 新定位
+
+`interview-assistant` 后续可以从“智能面试助手 MVP”升级为：
+
+```text
+AI 面试准备 Agent
+```
+
+核心流程：
+
+```text
+上传简历
+-> Agent 分析岗位匹配度
+-> 生成学习计划
+-> 调用知识库出题
+-> 用户回答
+-> Agent 评分
+-> 更新薄弱点记忆
+-> 生成下一轮训练计划
+```
+
+### 后续 4 周强化线
+
+1. 第 1 周：LLM 接入、Prompt、结构化输出、失败兜底。
+2. 第 2 周：Tool Calling，设计并实现 1 个后端工具调用闭环。
+3. 第 3 周：RAG 和 Memory，把答案库和用户薄弱点接入训练流程。
+4. 第 4 周：Agent 工作流，形成一页方案、一张流程图和 1 分钟项目话术。
+
+详细计划见 `ai-agent-jd-study-plan.md`。
+
+## 11. 每日固定流程
 
 开始前：
 
@@ -443,7 +515,8 @@ git pull
 1. 看一个主题。
 2. 跑一个 Demo 或找一个项目代码位置。
 3. 写一张答案卡。
-4. 让 Codex 追问 3 个问题。
+4. 说明它如何服务 AI Agent 项目落地。
+5. 让 Codex 追问 3 个问题。
 ```
 
 结束前：
@@ -461,7 +534,7 @@ git pull
 git commit -m "docs: update interview study notes"
 ```
 
-## 11. 本计划和原教程的差异
+## 12. 本计划和原教程的差异
 
 原教程是通用 Java 后端面试路径。本计划做了这些个人化调整：
 
@@ -469,4 +542,5 @@ git commit -m "docs: update interview study notes"
 - 把 `interview-assistant` 设为主接管项目，而不是直接追求新大项目。
 - 把高并发项目推迟到 Java/MySQL/Redis/Spring 之后，避免再次变成 AI 生成壳。
 - 增加 AI 工程化学习线，包括 RAG、Prompt、结构化输出、幻觉处理。
+- 根据 AI Agent 工程师 JD，增加 Tool Calling、Memory、Planning、Agent 工作流和技术方案表达。
 - 增加跨电脑 Git + handoff 工作流，保证学习不会断档。

@@ -2,6 +2,53 @@
 
 > 每次学习结束后更新。重点写“学会了什么、还不会什么、下一步做什么”，不用写长篇流水账。
 
+## 2026-06-21
+
+### 今日主题
+
+第一阶段 Day 1：整理 `interview-assistant` 项目卡片和面试话术。
+
+### 已完成
+
+- 从 GitHub 拉取并阅读 `BQHM/interview-assistant` 最新源码和文档。
+- 阅读项目 README、`AGENTS.md`、`docs/implementation-plan.md`、`docs/learning-roadmap.md`、ADR 和完成度审计文档。
+- 阅读核心后端文件：`ResumeController`、`InterviewController`、`ResumeUploadService`、`ResumeGradingService`、`InterviewSessionService`、`ResumeEntity`、`ResumeAnalysisEntity`、`InterviewSessionEntity`、`InterviewAnswerEntity`。
+- 新增 `interview-assistant-project-card.md`，沉淀项目定位、核心流程、30 秒 / 1 分钟 / 3 分钟话术、必会追问和接管计划。
+- 更新 `knowledge-answer-bank.md`，新增 `interview-assistant` 项目深挖答案卡。
+
+### 今日理解
+
+- `interview-assistant` 当前最适合讲两条主链路：简历上传分析链路和文字模拟面试链路。
+- 简历模块的亮点不是“调 AI”，而是文件校验、内容 hash 去重、Tika 解析、对象存储、PostgreSQL 落库、Spring AI 结构化分析和规则兜底。
+- 面试模块的关键语义是：`currentQuestionIndex` 表示下一道待答题索引；暂存答案不推进，提交答案才推进；完成后禁止继续作答。
+- 最新代码里已经有 `InterviewAnswerEntity`、历史列表、详情和删除接口，说明 README / 早期审计文档有部分过期描述，后续要以最新源码为准。
+- 下一步很适合亲手接管一个小切片：检查报告和历史详情是否真正从独立答案表聚合答案，并补核心流程测试。
+
+### 还不清楚
+
+- 当前本机是否已经有可运行的 `interview-assistant` 正式工作区，而不仅是临时 clone。
+- PostgreSQL、RustFS / S3 和 AI Key 是否已经在本机配置好，能否直接启动项目做接口验证。
+- 报告生成和历史详情在最新代码中是否已经完全适配 `InterviewAnswerEntity`，需要进入项目工作区后跑测试或手工验证。
+
+### 下一步
+
+- 先让用户按 30 秒和 1 分钟话术复述 `interview-assistant`。
+- Codex 扮演面试官，围绕项目追问 5 个问题，答不上来的补入答案库。
+- 如果进入开发接管，则优先做一个小切片：修正报告 / 历史详情从答案表聚合，并为 `InterviewSessionService` 补最小测试。
+
+### 补充：AI Agent JD 对齐
+
+- 阅读用户提供的 AI Agent 工程师 JD 截图，确认该岗位不是纯算法岗，也不是传统 Java CRUD 岗，而是偏“Java 后端 + LLM 应用工程 + Agent 产品落地”。
+- 新增 `ai-agent-jd-study-plan.md`，把 JD 拆成需求拆解、方案评审、原型上线、工具调用、记忆增强、自主规划、多模态交互和大模型生态。
+- 更新 `java-backend-interview-plan.md`，增加 AI Agent 工程师 JD 对齐路线。
+- 更新 `knowledge-answer-bank.md`，新增 AI Agent 岗位定位和 Agent vs ChatBot 答案卡。
+- 后续八股学习要额外回答：这个知识点如何服务 `interview-assistant` 的 Agent 化改造？
+
+### JD 对齐后的下一步
+
+- 下一主题优先学“线程池 + AI 异步任务”，同时覆盖 Java 并发八股和 Agent 产品落地。
+- 继续保留 HashMap、ConcurrentHashMap、ThreadLocal 等基础题，但讲解时要绑定工具注册表、用户上下文和多线程状态安全。
+
 ## 2026-06-13
 
 ### 今日主题

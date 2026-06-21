@@ -22,6 +22,7 @@ https://github.com/BQHM
 2. 把已有项目从“AI 辅助产物”接管成自己能讲清楚的工程资产。
 3. 准备一个小而硬的高并发下单/预约项目，逐步掌握限流、库存预热、Redis Lua、MQ、幂等、压测。
 4. 学习 AI 工程化能力：LLM 接入、Prompt、结构化输出、RAG、幻觉处理、降级和成本控制。
+5. 面向 AI Agent 工程师 JD，强化 Tool Calling、Memory、Planning、RAG、Agent 工作流和技术方案表达。
 
 ## 文档索引
 
@@ -31,6 +32,8 @@ https://github.com/BQHM
 | `java-backend-interview-plan.md` | 按 JavaGuide 面试通关指南改造的个人 6-8 周学习计划 |
 | `java-ai-interview-study-guide.md` | Java 后端与 AI 工程化面试学习资料 |
 | `knowledge-answer-bank.md` | 高频知识点答案库，用来沉淀可直接讲的答案 |
+| `ai-agent-jd-study-plan.md` | AI Agent 工程师 JD 对齐学习计划，指导八股和项目如何服务岗位要求 |
+| `interview-assistant-project-card.md` | `interview-assistant` 项目卡片、三档话术、追问清单和接管计划 |
 | `HANDOFF.md` | 两台电脑 / 两个 Codex 之间交接当前进度 |
 | `study-log.md` | 每日学习记录和复盘 |
 | `.gitignore` | 避免提交本地临时文件、密钥和构建产物 |
@@ -58,7 +61,7 @@ study-log.md 最近一条记录
 
 ```bash
 git status
-git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md .gitignore
+git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md interview-assistant-project-card.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
@@ -102,5 +105,6 @@ study-log.md
 - 不让 AI 一次性生成大项目。
 - 每天只推进一个小主题。
 - 每个知识点都要落到：概念、Demo、项目、追问。
+- 面向 AI Agent JD 时，每个八股还要额外回答：它如何服务 Agent 产品落地？
 - 每次换电脑前必须更新 handoff。
 - `interview-guide` 是导师项目/参考项目，不写入个人简历项目经历；个人项目只围绕 `interview-assistant` 讲真实实现和接管计划。
