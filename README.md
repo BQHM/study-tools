@@ -28,16 +28,18 @@ https://github.com/BQHM
 
 | 文件 | 用途 |
 | --- | --- |
-| `AGENTS.md` | Codex 协作规则：学习流程、角色、文档维护和同步方式 |
-| `java-backend-interview-plan.md` | 按 JavaGuide 面试通关指南改造的个人 6-8 周学习计划 |
-| `java-ai-interview-study-guide.md` | Java 后端与 AI 工程化面试学习资料 |
-| `knowledge-answer-bank.md` | 高频知识点答案库，用来沉淀可直接讲的答案 |
-| `ai-agent-jd-study-plan.md` | AI Agent 工程师 JD 对齐学习计划，指导八股和项目如何服务岗位要求 |
-| `bank-java-jd-positioning.md` | 银行 Java JD 匹配、真实工作经历包装、银行业务八股优先级 |
-| `interview-assistant-project-card.md` | `interview-assistant` 项目卡片、三档话术、追问清单和接管计划 |
-| `HANDOFF.md` | 两台电脑 / 两个 Codex 之间交接当前进度 |
-| `study-log.md` | 每日学习记录和复盘 |
-| `.gitignore` | 避免提交本地临时文件、密钥和构建产物 |
+| `profile.md` | 个人画像主档：学历/工作时间线、真实经历、求职主线、表达边界和待补充事实 |
+| `jd-tracking.md` | JD 台账：把看过的 JD 按分隔线记录在一个文件里，保留厂商、岗位、匹配点和简历定制方向 |
+| `java-backend-interview-plan.md` | Java 后端 6-8 周学习计划：阶段安排、八股顺序、银行 Java 和 AI Agent JD 对齐路线 |
+| `knowledge-answer-bank.md` | 高频答案库：沉淀能直接口述的 Java、数据库、Redis、MQ、AI、项目和岗位定位答案 |
+| `bank-java-jd-positioning.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
+| `ai-agent-jd-study-plan.md` | AI Agent 岗位专项：AI Agent JD 拆解、Tool Calling、Memory、Planning、RAG 和项目改造路线 |
+| `interview-assistant-project-card.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
+| `java-ai-interview-study-guide.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
+| `study-log.md` | 学习日志：记录每天学了什么、理解了什么、还卡在哪里、下一步做什么 |
+| `HANDOFF.md` | 交接文档：跨电脑/跨会话时优先读取，记录当前阶段、已完成、未完成和下一步 |
+| `AGENTS.md` | Codex 协作规则：规定学习闭环、项目边界、文档维护方式和回答口径 |
+| `.gitignore` | Git 忽略规则：避免提交本地临时文件、密钥和构建产物 |
 
 ## 推荐工作流
 
@@ -62,7 +64,7 @@ study-log.md 最近一条记录
 
 ```bash
 git status
-git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
+git add AGENTS.md README.md HANDOFF.md study-log.md profile.md jd-tracking.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
