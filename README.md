@@ -33,6 +33,7 @@ https://github.com/BQHM
 | `java-ai-interview-study-guide.md` | Java 后端与 AI 工程化面试学习资料 |
 | `knowledge-answer-bank.md` | 高频知识点答案库，用来沉淀可直接讲的答案 |
 | `ai-agent-jd-study-plan.md` | AI Agent 工程师 JD 对齐学习计划，指导八股和项目如何服务岗位要求 |
+| `bank-java-jd-positioning.md` | 银行 Java JD 匹配、真实工作经历包装、银行业务八股优先级 |
 | `interview-assistant-project-card.md` | `interview-assistant` 项目卡片、三档话术、追问清单和接管计划 |
 | `HANDOFF.md` | 两台电脑 / 两个 Codex 之间交接当前进度 |
 | `study-log.md` | 每日学习记录和复盘 |
@@ -61,7 +62,7 @@ study-log.md 最近一条记录
 
 ```bash
 git status
-git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md interview-assistant-project-card.md .gitignore
+git add AGENTS.md README.md HANDOFF.md study-log.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
@@ -106,5 +107,6 @@ study-log.md
 - 每天只推进一个小主题。
 - 每个知识点都要落到：概念、Demo、项目、追问。
 - 面向 AI Agent JD 时，每个八股还要额外回答：它如何服务 Agent 产品落地？
+- 面向银行 Java JD 时，每个八股要额外回答：它如何服务开户、存入、支取、数币等交易系统？
 - 每次换电脑前必须更新 handoff。
 - `interview-guide` 是导师项目/参考项目，不写入个人简历项目经历；个人项目只围绕 `interview-assistant` 讲真实实现和接管计划。

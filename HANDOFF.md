@@ -8,7 +8,7 @@
 
 ## 当前阶段
 
-阶段：AI Agent 工程师 JD 对齐 + `interview-assistant` Agent 化学习路线调整。
+阶段：银行 Java 岗位定位 + AI Agent 工程师 JD 对齐。
 
 当前重点：
 
@@ -20,6 +20,7 @@
 - 后续优先接管 `interview-assistant`，因为它比 `FixLedger` 小，更适合真正吃透。
 - 2026-06-21 已从 GitHub 拉取 `BQHM/interview-assistant` 最新源码并完成第一版项目卡片。
 - 2026-06-21 已根据用户提供的 AI Agent 工程师 JD，新增岗位适配学习路线。
+- 2026-06-21 用户补充真实工作经历：2024-04 入职长亮科技存款组做 Java 开发，2026-06 起在宁波银行驻场参与数币业务。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 - 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
 - 重要项目边界：`interview-guide` 不是用户项目，而是导师项目/参考项目；简历和面试项目经历只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人项目。
@@ -64,6 +65,12 @@
   - 更新 `java-backend-interview-plan.md`，加入 JD 对齐路线。
   - 更新 `knowledge-answer-bank.md`，加入 AI Agent 岗位定位和 Agent vs ChatBot 答案卡。
   - 明确后续八股学习要绑定 Agent 工程问题，例如线程池对应 AI 异步任务，Redis 对应会话缓存和限流，MySQL 对应用户记忆和答题记录。
+- 已完成银行 Java JD 对齐：
+  - 新增 `bank-java-jd-positioning.md`。
+  - 明确用户主线是“银行核心业务 Java 开发 + 存款/账户/交易链路 + 数币业务开发”。
+  - 更新 `java-backend-interview-plan.md`，加入银行 Java JD 对齐路线。
+  - 更新 `knowledge-answer-bank.md`，加入银行 Java 岗位定位和开户/存入/支取业务答案卡。
+  - 明确银行 Java 岗八股优先级：事务、索引、MyBatis、Redis 幂等、MQ、Spring Cloud、Linux、并发、JVM。
 - 明确了学习原则：
   - 不让 AI 直接生成完整项目。
   - 用 AI 解释、Review、追问、辅助复盘。
@@ -76,10 +83,31 @@
 - 还没有在正式工作区验证 `interview-assistant` 是否能启动、构建和跑接口。
 - 还需要检查报告生成和历史详情是否已经完全从 `InterviewAnswerEntity` 聚合答案。
 - 还没有开始 Tool Calling、Memory、Planning 的项目化落地。
+- 还没有把长亮科技 / 宁波银行经历整理成正式简历条目。
+- 还没有补银行交易一致性、幂等、流水、冲正/补偿等高频答案卡。
 
 ## 下一步建议
 
-### 第一步：按 AI Agent JD 调整学习重心
+### 第一步：明确两条投递主线
+
+当前有两条可投递主线：
+
+```text
+1. 银行 Java / 金融科技 Java：主线，基于长亮科技存款组和宁波银行数币经历。
+2. AI Agent 工程师：成长线，基于 interview-assistant Agent 化改造。
+```
+
+银行 Java 岗更贴真实工作经历，优先准备：
+
+```text
+bank-java-jd-positioning.md
+Spring 事务 + 银行交易一致性
+MySQL/Oracle 索引和慢 SQL
+Redis 幂等和防重复提交
+MQ 可靠消息和补偿
+```
+
+### 第二步：按 AI Agent JD 调整学习重心
 
 先阅读：
 
@@ -96,7 +124,7 @@ knowledge-answer-bank.md 中的 AI Agent 岗位定位
 它在 interview-assistant Agent 化改造中对应哪个工程问题？
 ```
 
-### 第二步：完成 Day 1 口述训练
+### 第三步：完成 Day 1 口述训练
 
 围绕 `interview-assistant-project-card.md` 进行口述：
 
@@ -116,7 +144,7 @@ currentQuestionIndex 为什么表示下一道待答题？
 下一步你准备亲手接管哪个小切片？
 ```
 
-### 第三步：继续第 1 周复习
+### 第四步：继续第 1 周复习
 
 从 `java-backend-interview-plan.md` 的第一阶段开始，不要直接跳到八股：
 
@@ -133,7 +161,7 @@ Day 3：java-core-lab 学习实验卡片
 HashMap -> ConcurrentHashMap -> volatile -> ThreadLocal -> 线程池 -> MySQL 索引 -> Redis 缓存
 ```
 
-### 第四步：用 java-core-lab 做实验
+### 第五步：用 java-core-lab 做实验
 
 每学一个主题，到本机的 `java-core-lab` 项目目录跑对应 Demo。
 
@@ -169,6 +197,12 @@ D:\work\work_space\Project\java-core-lab
 
 ```text
 请根据 ai-agent-jd-study-plan.md，从线程池 + AI 异步任务开始，帮我用八股 + 项目落地的方式学习。
+```
+
+或者：
+
+```text
+请根据 bank-java-jd-positioning.md，从 Spring 事务 + 银行交易一致性开始，帮我用八股 + 工作经历话术的方式学习。
 ```
 
 ## 注意事项

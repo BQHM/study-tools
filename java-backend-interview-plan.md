@@ -501,7 +501,54 @@ AI 面试准备 Agent
 
 详细计划见 `ai-agent-jd-study-plan.md`。
 
-## 11. 每日固定流程
+## 11. 银行 Java JD 对齐路线
+
+用户真实经历：
+
+```text
+2024.04 - 至今：长亮科技存款组 Java 开发工程师
+2026.06 - 至今：宁波银行驻场外包，参与数币业务开发
+```
+
+主要业务经历：
+
+- 长亮 V8.7 基板相关业务开发。
+- 开户业务。
+- 存入业务。
+- 支取业务。
+- 当前开始参与数字人民币业务开发。
+
+这类经历适合匹配：
+
+```text
+银行核心业务 Java 开发
+金融科技 Java 开发
+银行外包核心系统开发
+存款、账户、支付、数币、信贷相关 Java 岗
+```
+
+银行 Java JD 下，八股优先级要调整为：
+
+1. MySQL / Oracle：索引、事务、锁、慢 SQL、执行计划。
+2. Spring / Spring MVC / MyBatis：请求链路、事务失效、Mapper、动态 SQL。
+3. Redis：缓存、分布式锁、幂等、防重复提交。
+4. MQ：异步处理、可靠消息、重复消费、补偿。
+5. Spring Cloud / Dubbo：注册发现、服务调用、超时、重试、熔断。
+6. Linux：日志排查、常用命令、进程和端口。
+7. Java 并发：线程池、ThreadLocal、锁、ConcurrentHashMap。
+8. JVM：OOM、CPU 高、GC 基础排查。
+
+后续每个八股都要额外回答：
+
+```text
+它如何服务银行交易系统？
+它如何关联开户、存入、支取、数币业务？
+它如何解释幂等、一致性、流水、异常回滚和问题排查？
+```
+
+详细计划见 `bank-java-jd-positioning.md`。
+
+## 12. 每日固定流程
 
 开始前：
 
@@ -515,7 +562,7 @@ git pull
 1. 看一个主题。
 2. 跑一个 Demo 或找一个项目代码位置。
 3. 写一张答案卡。
-4. 说明它如何服务 AI Agent 项目落地。
+4. 说明它如何服务 AI Agent 项目落地，或者如何服务银行交易系统。
 5. 让 Codex 追问 3 个问题。
 ```
 
@@ -534,7 +581,7 @@ git pull
 git commit -m "docs: update interview study notes"
 ```
 
-## 12. 本计划和原教程的差异
+## 13. 本计划和原教程的差异
 
 原教程是通用 Java 后端面试路径。本计划做了这些个人化调整：
 
@@ -543,4 +590,5 @@ git commit -m "docs: update interview study notes"
 - 把高并发项目推迟到 Java/MySQL/Redis/Spring 之后，避免再次变成 AI 生成壳。
 - 增加 AI 工程化学习线，包括 RAG、Prompt、结构化输出、幻觉处理。
 - 根据 AI Agent 工程师 JD，增加 Tool Calling、Memory、Planning、Agent 工作流和技术方案表达。
+- 根据银行 Java JD 和真实工作经历，增加银行交易系统、存款业务、数币业务、幂等、一致性和交易流水表达。
 - 增加跨电脑 Git + handoff 工作流，保证学习不会断档。
