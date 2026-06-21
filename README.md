@@ -30,6 +30,7 @@ https://github.com/BQHM
 | --- | --- |
 | `profile.md` | 个人画像主档：学历/工作时间线、真实经历、求职主线、表达边界和待补充事实 |
 | `jd-tracking.md` | JD 台账：把看过的 JD 按分隔线记录在一个文件里，保留厂商、岗位、匹配点和简历定制方向 |
+| `conversation-log.md` | 对话接续记录：简短记录关键对话、暂停点和下次接续问题，方便换设备继续 |
 | `java-backend-interview-plan.md` | Java 后端 6-8 周学习计划：阶段安排、八股顺序、银行 Java 和 AI Agent JD 对齐路线 |
 | `knowledge-answer-bank.md` | 高频答案库：沉淀能直接口述的 Java、数据库、Redis、MQ、AI、项目和岗位定位答案 |
 | `bank-java-jd-positioning.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
@@ -60,11 +61,12 @@ study-log.md 最近一条记录
 
 1. 更新 `study-log.md`。
 2. 更新 `HANDOFF.md` 的当前状态、下一步和阻塞点。
-3. 提交并推送：
+3. 如需暂停或换设备，在 `conversation-log.md` 追加一条关键对话摘要。
+4. 提交并推送：
 
 ```bash
 git status
-git add AGENTS.md README.md HANDOFF.md study-log.md profile.md jd-tracking.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
+git add AGENTS.md README.md HANDOFF.md study-log.md conversation-log.md profile.md jd-tracking.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
@@ -81,6 +83,7 @@ cd study-tools
 ```text
 HANDOFF.md
 study-log.md
+conversation-log.md
 ```
 
 ## Codex 使用约定
@@ -111,4 +114,5 @@ study-log.md
 - 面向 AI Agent JD 时，每个八股还要额外回答：它如何服务 Agent 产品落地？
 - 面向银行 Java JD 时，每个八股要额外回答：它如何服务开户、存入、支取、数币等交易系统？
 - 每次换电脑前必须更新 handoff。
+- 如果刚结束一段关键对话，也要更新 `conversation-log.md`，方便下一台设备快速接上。
 - `interview-guide` 是导师项目/参考项目，不写入个人简历项目经历；个人项目只围绕 `interview-assistant` 讲真实实现和接管计划。

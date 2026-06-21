@@ -80,6 +80,9 @@
   - `profile.md` 记录用户毕业时间、工作时间线、长亮科技存款组经历、宁波银行数币驻场经历、求职主线、表达边界和待补充事实。
   - 后续用户补充自身情况时优先更新 `profile.md`。
   - README 已补充每个 Markdown 文档的作用。
+- 已新增对话接续记录：
+  - `conversation-log.md` 用于简短记录关键对话、暂停点和下次接续问题。
+  - 它不替代 `study-log.md` 和 `HANDOFF.md`，只作为换设备时快速恢复“刚才聊到哪”的轻量索引。
 - 已将用户最新经历补入 `profile.md` 和 `bank-java-jd-positioning.md`：
   - 长亮科技岗位性质：产品研发，负责存款业务开发。
   - 主要业务：开户、存入、支取/存取款等交易。
@@ -211,6 +214,12 @@ D:\work\work_space\Project\java-core-lab
 ```
 
 ## 下次打开 Codex 时可以这样说
+
+```text
+请先阅读 HANDOFF.md、study-log.md 和 conversation-log.md，然后继续上次暂停的学习任务。
+```
+
+或者：
 
 ```text
 请先阅读 HANDOFF.md、study-log.md 和 interview-assistant-project-card.md，然后围绕 interview-assistant 扮演面试官追问我 5 个问题。
