@@ -135,6 +135,13 @@
 - 明确每个文档的唯一职责和不应该写入的内容，避免 `profile.md`、`jd-tracking.md`、`knowledge-answer-bank.md`、`HANDOFF.md` 等文件后续互相重复。
 - 当前策略是先保留现有文档结构，通过 README 约束归档规则；暂不删除、不移动、不合并文件。
 
+### 补充：profile 项目资产归档
+
+- 遍历本仓库已有文档后，补充 `profile.md` 的“项目资产与简历使用建议”。
+- 明确 `interview-assistant`、`FixLedger`、`java-core-lab`、`truckfarm`、未来高并发项目和 `interview-guide` 的使用边界。
+- 新增技术能力口径，把“已确认可表达”“正在补强”“暂不建议主动写成强项”拆开，避免简历和面试表达过度包装。
+- 本次尝试读取 GitHub 最新项目页面失败，因此项目资产补充基于本仓库已有项目卡、handoff 和学习日志；后续项目深挖仍需优先读取 GitHub 最新源码。
+
 ## 2026-06-13
 
 ### 今日主题
