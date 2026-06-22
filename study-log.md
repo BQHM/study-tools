@@ -147,6 +147,12 @@
 - 更新 `README.md`、`AGENTS.md`、`HANDOFF.md` 和 `conversation-log.md`，固化该分工。
 - `study-log.md` 回到每日学习结果记录，不作为聊天接续主入口。
 
+### 补充：学习启动协议
+
+- 用户明确：每次准备学习或询问“上次学到哪里了”时，Codex 要先 `git pull`，确保公司电脑和家里电脑的文档同步。
+- 启动顺序固定为：先读 `HANDOFF.md` 获取当前大任务，再读 `conversation-log.md` 获取最新聊天暂停点，再按需要读 `study-log.md` 和 `java-backend-interview-plan.md`。
+- 后续继续学习时，直接从 `conversation-log.md` 最新记录的“下次接续”开始；当前接续点仍是 `HashMap 为什么容量是 2 的幂？`
+
 ## 2026-06-13
 
 ### 今日主题

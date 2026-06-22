@@ -81,17 +81,30 @@ Codex 应该如何协作 -> AGENTS.md
 
 ### 每次开始学习前
 
+如果你准备继续学习，或者只问：
+
+```text
+上次学到哪里了？
+我准备学习了。
+继续上次的进度。
+```
+
+Codex 必须先执行学习启动协议：
+
 ```bash
 git pull
 ```
 
-然后阅读：
+然后按顺序阅读：
 
 ```text
-HANDOFF.md：先确认当前大任务、阶段和下一步
-conversation-log.md：再接上最近一次聊天进度和暂停点
-study-log.md：需要复盘学习结果时再看最近一条
+1. HANDOFF.md：先确认当前大任务、阶段和下一步
+2. conversation-log.md：再接上最近一次聊天进度和暂停点
+3. study-log.md：需要复盘学习结果时再看最近一条
+4. java-backend-interview-plan.md：确认当前学习阶段和默认推进顺序
 ```
+
+继续学习时以 `conversation-log.md` 最新记录里的“下次接续”为直接起点，`HANDOFF.md` 负责判断当前大任务，不要只凭聊天记忆回答。
 
 ### 每次结束学习后
 
@@ -125,6 +138,12 @@ study-log.md
 ## Codex 使用约定
 
 对 Codex 说：
+
+```text
+我准备学习了，先拉取最新代码，然后按 HANDOFF.md 和 conversation-log.md 继续上次进度。
+```
+
+或者：
 
 ```text
 先阅读 HANDOFF.md 获取当前大任务，再阅读 conversation-log.md 接上聊天进度，接着帮我继续今天的 Java 面试复习。

@@ -2,7 +2,7 @@
 
 > 作用：记录当前大任务、阶段、已完成、未完成、阻塞点和下一步，用于公司电脑、家里电脑以及不同 Codex 会话之间同步长期上下文。
 >
-> 使用方式：每次开始学习时先读 `HANDOFF.md` 获取大任务，再读 `conversation-log.md` 接上最近一次聊天进度。每轮对话细节不要写在这里。
+> 使用方式：每次开始学习时先 `git pull`，再读 `HANDOFF.md` 获取大任务，再读 `conversation-log.md` 接上最近一次聊天进度。每轮对话细节不要写在这里。
 
 ## 当前日期
 
@@ -27,6 +27,7 @@
 - 2026-06-22 已把本机这几天的项目口述训练和八股训练补充进答案库，重点包括简历 hash 去重、文件校验、Tika 解析、AI 超时/重试/降级、Prompt Injection、AI 输出校验、HashMap put 和 String 系列。
 - 2026-06-22 已在 `README.md` 新增“文档唯一职责规则”，明确每个文档的归档边界，后续先按职责治理重复内容，暂不删除、不移动、不合并文件。
 - 2026-06-22 已纠偏 `profile.md` 的职责：该文件只登记用户自身实际情况、工作经历、能力状态、表达边界和待补充事实；项目资产、项目学习优先级和项目简历建议不再写入 `profile.md`，应放在项目卡、学习计划或 handoff 中。
+- 2026-06-22 已明确学习启动协议：用户问“上次学到哪里了 / 我准备学习了 / 继续上次进度”时，Codex 必须先 `git pull`，再读 `HANDOFF.md` 和 `conversation-log.md`，并从 `conversation-log.md` 最新记录继续。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 - 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
 - 重要项目边界：`interview-guide` 不是用户项目，而是导师项目/参考项目；简历和面试项目经历只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人项目。

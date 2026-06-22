@@ -70,3 +70,11 @@
 - 本次判断：这是后续所有 Codex 会话的启动顺序，`study-log.md` 回到学习结果记录，不承担聊天接续入口。
 - 已更新：`README.md`、`AGENTS.md`、`HANDOFF.md`、`conversation-log.md`。
 - 下次接续：按“先 handoff，后 conversation，再按任务读取计划/教材/答案库”的流程开始。
+
+## 2026-06-22｜明确学习启动协议
+
+- 对话主题：用户补充“准备学习 / 上次学到哪里了”的固定启动方式。
+- 用户补充：每次准备学习时，先让 Codex 拉取远程最新代码，再依次读 `HANDOFF.md` 和 `conversation-log.md`；`HANDOFF.md` 定大任务，`conversation-log.md` 定聊天进度，然后直接从最新记录继续。
+- 本次判断：后续不能只凭记忆回答“上次学到哪”，必须先同步远程并读取文档；真正的继续点以 `conversation-log.md` 最新记录为准。
+- 已更新：`README.md`、`AGENTS.md`、`HANDOFF.md`、`study-log.md`、`conversation-log.md`。
+- 下次接续：继续当前暂停题：`HashMap 为什么容量是 2 的幂？`
