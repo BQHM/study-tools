@@ -28,6 +28,7 @@
 - 2026-06-22 已在 `README.md` 新增“文档唯一职责规则”，明确每个文档的归档边界，后续先按职责治理重复内容，暂不删除、不移动、不合并文件。
 - 2026-06-22 已纠偏 `profile.md` 的职责：该文件只登记用户自身实际情况、工作经历、能力状态、表达边界和待补充事实；项目资产、项目学习优先级和项目简历建议不再写入 `profile.md`，应放在项目卡、学习计划或 handoff 中。
 - 2026-06-22 已明确学习启动协议：用户问“上次学到哪里了 / 我准备学习了 / 继续上次进度”时，Codex 必须先 `git pull`，再读 `HANDOFF.md` 和 `conversation-log.md`，并从 `conversation-log.md` 最新记录继续。
+- 2026-06-22 用户临时暂停八股学习，当前优先完善 `profile.md`；已将 `profile.md` 重整为个人事实主档，下一步先做画像访谈和事实采集。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 - 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
 - 重要项目边界：`interview-guide` 不是用户项目，而是导师项目/参考项目；简历和面试项目经历只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人项目。
@@ -111,6 +112,7 @@
 - 还需要检查报告生成和历史详情是否已经完全从 `InterviewAnswerEntity` 聚合答案。
 - 还没有开始 Tool Calling、Memory、Planning 的项目化落地。
 - 还没有把长亮科技 / 宁波银行经历整理成正式简历条目。
+- `profile.md` 已完成结构重整，但还需要继续补长亮 V8.7 基板、具体交易需求、浦发驻场模块、宁波数币模块和真实问题排查案例。
 - 还没有补银行交易一致性、幂等、流水、冲正/补偿等高频答案卡。
 - JD-001 还需要补充是否要求 Java、Python、LangChain、Dify、Coze 或其他特定框架。
 - `profile.md` 中仍有大量待补充事实：专业、长亮技术栈、具体接口、数币模块、真实排查案例、可量化结果。
