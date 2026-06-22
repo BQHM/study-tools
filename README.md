@@ -30,7 +30,7 @@ https://github.com/BQHM
 | --- | --- |
 | `profile.md` | 个人画像主档：学历/工作时间线、真实经历、求职主线、表达边界和待补充事实 |
 | `jd-tracking.md` | JD 台账：把看过的 JD 按分隔线记录在一个文件里，保留厂商、岗位、匹配点和简历定制方向 |
-| `conversation-log.md` | 对话接续记录：简短记录关键对话、暂停点和下次接续问题，方便换设备继续 |
+| `conversation-log.md` | 对话接续记录：记录每次对话重点、暂停点和下次接续问题，方便换设备继续 |
 | `java-backend-interview-plan.md` | Java 后端 6-8 周学习计划：阶段安排、八股顺序、银行 Java 和 AI Agent JD 对齐路线 |
 | `knowledge-answer-bank.md` | 高频答案库：沉淀能直接口述的 Java、数据库、Redis、MQ、AI、项目和岗位定位答案 |
 | `bank-java-jd-positioning.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
@@ -38,7 +38,7 @@ https://github.com/BQHM
 | `interview-assistant-project-card.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
 | `java-ai-interview-study-guide.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
 | `study-log.md` | 学习日志：记录每天学了什么、理解了什么、还卡在哪里、下一步做什么 |
-| `HANDOFF.md` | 交接文档：跨电脑/跨会话时优先读取，记录当前阶段、已完成、未完成和下一步 |
+| `HANDOFF.md` | 大任务交接文档：跨电脑/跨会话时优先读取，记录当前大任务、阶段、已完成、未完成和下一步 |
 | `AGENTS.md` | Codex 协作规则：规定学习闭环、项目边界、文档维护方式和回答口径 |
 | `.gitignore` | Git 忽略规则：避免提交本地临时文件、密钥和构建产物 |
 
@@ -50,9 +50,9 @@ https://github.com/BQHM
 | --- | --- | --- |
 | `README.md` | 仓库入口，说明仓库目标、文档地图、工作流和更新规则 | 具体学习笔记、每日进度、长篇答案 |
 | `AGENTS.md` | Codex 行为规则，固定协作流程、项目边界和回答口径 | 每日学习流水、具体 JD 拆解、临时对话记录 |
-| `HANDOFF.md` | 跨电脑、跨 Codex 会话的交接主档，记录当前阶段、未完成事项和下一步 | 完整教材内容、所有历史学习细节 |
+| `HANDOFF.md` | 大任务交接主档，记录当前大任务、阶段、未完成事项和下一步 | 完整教材内容、所有历史学习细节、每轮对话细节 |
 | `study-log.md` | 每日学习日志，记录当天学了什么、卡在哪里、下一步做什么 | 长期规则、完整答案卡、项目完整话术 |
-| `conversation-log.md` | 对话接续索引，只记录关键暂停点和影响后续学习的对话摘要 | 完整聊天记录、已经归档到主档的详细事实 |
+| `conversation-log.md` | 对话接续索引，记录每次对话重点、暂停点和下次接续问题 | 完整聊天记录、已经归档到主档的详细事实、大任务阶段规划 |
 | `profile.md` | 个人画像事实库，维护学历、工作时间线、真实经历和表达边界 | 针对某个 JD 的投递策略、八股答案 |
 | `jd-tracking.md` | JD 台账，记录看过的岗位、要求、匹配点和简历定制方向 | 个人完整履历、通用教材内容 |
 | `java-backend-interview-plan.md` | 总学习计划，维护阶段顺序、每日节奏和主题优先级 | 具体题目的长篇答案、专项 JD 的全部细节 |
@@ -72,8 +72,8 @@ https://github.com/BQHM
 可口述答案 -> knowledge-answer-bank.md
 项目话术和项目追问 -> 对应项目卡片
 当天学习结果 -> study-log.md
-换电脑/换会话交接 -> HANDOFF.md
-刚聊到哪、下次从哪继续 -> conversation-log.md
+当前大任务、阶段、跨电脑交接 -> HANDOFF.md
+每次对话重点、刚聊到哪、下次从哪继续 -> conversation-log.md
 Codex 应该如何协作 -> AGENTS.md
 ```
 
@@ -88,15 +88,16 @@ git pull
 然后阅读：
 
 ```text
-HANDOFF.md
-study-log.md 最近一条记录
+HANDOFF.md：先确认当前大任务、阶段和下一步
+conversation-log.md：再接上最近一次聊天进度和暂停点
+study-log.md：需要复盘学习结果时再看最近一条
 ```
 
 ### 每次结束学习后
 
 1. 更新 `study-log.md`。
-2. 更新 `HANDOFF.md` 的当前状态、下一步和阻塞点。
-3. 如需暂停或换设备，在 `conversation-log.md` 追加一条关键对话摘要。
+2. 如果大任务、阶段、阻塞点或跨电脑交接信息变化，更新 `HANDOFF.md`。
+3. 每次结束一轮关键对话、暂停或换设备，在 `conversation-log.md` 追加一条对话重点和下次接续点。
 4. 提交并推送：
 
 ```bash
@@ -117,8 +118,8 @@ cd study-tools
 
 ```text
 HANDOFF.md
-study-log.md
 conversation-log.md
+study-log.md
 ```
 
 ## Codex 使用约定
@@ -126,7 +127,7 @@ conversation-log.md
 对 Codex 说：
 
 ```text
-先阅读 HANDOFF.md 和 study-log.md，接着帮我继续今天的 Java 面试复习。
+先阅读 HANDOFF.md 获取当前大任务，再阅读 conversation-log.md 接上聊天进度，接着帮我继续今天的 Java 面试复习。
 ```
 
 或者：

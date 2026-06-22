@@ -10,10 +10,11 @@
 
 每次开始学习或继续任务时，Codex 必须先读取这些文件：
 
-1. `HANDOFF.md`：了解当前阶段、最近进度和下一步。
-2. `study-log.md`：了解最近一次学习记录。
-3. `java-backend-interview-plan.md`：确认当前处于哪一阶段。
-4. 按任务需要读取：
+1. `HANDOFF.md`：了解当前大任务、阶段、已完成、未完成和下一步。
+2. `conversation-log.md`：了解最近一次对话重点、聊天进度和暂停点。
+3. `study-log.md`：了解最近一次学习结果、卡壳点和学习产出。
+4. `java-backend-interview-plan.md`：确认当前处于哪一阶段。
+5. 按任务需要读取：
    - `java-ai-interview-study-guide.md`
    - `knowledge-answer-bank.md`
    - 相关项目 README 或源码。
@@ -123,7 +124,8 @@ Codex 需要用聊天式教学：
 | `java-ai-interview-study-guide.md` | 教材主体，系统讲知识点 |
 | `knowledge-answer-bank.md` | 答案库，保存可以直接口述的面试回答 |
 | `study-log.md` | 每日学习记录 |
-| `HANDOFF.md` | 跨电脑、跨 Codex 会话交接 |
+| `HANDOFF.md` | 大任务交接，记录当前大任务、阶段、已完成、未完成和下一步 |
+| `conversation-log.md` | 对话接续，记录每次对话重点、聊天进度、暂停点和下次接续问题 |
 | `README.md` | 仓库使用说明 |
 
 新增资料时，要先判断它属于哪一类：
@@ -132,7 +134,8 @@ Codex 需要用聊天式教学：
 - 可直接背诵/复述的答案放入 `knowledge-answer-bank.md`。
 - 执行计划放入 `java-backend-interview-plan.md`。
 - 当天进展放入 `study-log.md`。
-- 下次接续信息放入 `HANDOFF.md`。
+- 当前大任务、阶段、跨电脑交接信息放入 `HANDOFF.md`。
+- 每次对话重点、刚聊到哪、下次从哪继续放入 `conversation-log.md`。
 
 ## 学习顺序
 
@@ -203,9 +206,10 @@ Codex 需要用聊天式教学：
 
 1. 更新 `study-log.md`。
 2. 必要时更新 `knowledge-answer-bank.md`。
-3. 必要时更新 `HANDOFF.md`。
-4. 检查 `git status`。
-5. 提交并推送到远程仓库。
+3. 如果当前大任务、阶段、阻塞点或跨电脑交接信息变化，更新 `HANDOFF.md`。
+4. 如果本轮对话形成了关键暂停点、用户补充或下次接续问题，更新 `conversation-log.md`。
+5. 检查 `git status`。
+6. 提交并推送到远程仓库。
 
 提交信息建议：
 
@@ -236,7 +240,9 @@ docs: add answer cards
 如果用户没有指定任务，默认执行：
 
 ```text
-阅读 java-backend-interview-plan.md 第一阶段 Day 1，
+先阅读 HANDOFF.md 获取当前大任务，
+再阅读 conversation-log.md 接上聊天进度，
+然后阅读 java-backend-interview-plan.md 第一阶段 Day 1，
 帮助用户整理 interview-assistant 项目卡片，
 并写出 30 秒、1 分钟、3 分钟项目话术。
 ```

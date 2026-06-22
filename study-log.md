@@ -141,6 +141,12 @@
 - 已修正 `profile.md`：删除项目资产与简历使用建议，保留个人基本情况、工作时间线、求职主线、当前能力状态、简历表达边界和档案登记状态。
 - 后续项目资产、项目边界和项目学习优先级应放在项目卡、学习计划或 `HANDOFF.md`，不要再写入 `profile.md`。
 
+### 补充：handoff 与 conversation 分工
+
+- 明确启动流程：先读 `HANDOFF.md` 获取当前大任务，再读 `conversation-log.md` 获取最近对话重点和聊天进度。
+- 更新 `README.md`、`AGENTS.md`、`HANDOFF.md` 和 `conversation-log.md`，固化该分工。
+- `study-log.md` 回到每日学习结果记录，不作为聊天接续主入口。
+
 ## 2026-06-13
 
 ### 今日主题
