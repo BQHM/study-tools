@@ -29,6 +29,8 @@
 - 2026-06-22 已纠偏 `profile.md` 的职责：该文件只登记用户自身实际情况、工作经历、能力状态、表达边界和待补充事实；项目资产、项目学习优先级和项目简历建议不再写入 `profile.md`，应放在项目卡、学习计划或 handoff 中。
 - 2026-06-22 已明确学习启动协议：用户问“上次学到哪里了 / 我准备学习了 / 继续上次进度”时，Codex 必须先 `git pull`，再读 `HANDOFF.md` 和 `conversation-log.md`，并从 `conversation-log.md` 最新记录继续。
 - 2026-06-22 用户临时暂停八股学习，当前优先完善 `profile.md`；已将 `profile.md` 重整为个人事实主档，下一步先做画像访谈和事实采集。
+- 2026-06-22 用户纠正 `profile.md` 补充方式：必须由 Codex 慢慢访谈、用户回答、确认事实后再写入，不能由 Codex 自行补充；该规则已写入 `AGENTS.md`。
+- 2026-06-22 已恢复 HashMap 小白版复健训练，用户要求降低术语密度；当前已讲完容量 2 的幂、扩容、阈值、线程不安全的基础主线，下一步继续 HashMap 第二轮追问。
 - 远程同步仓库使用 `https://github.com/BQHM/study-tools`。
 - 项目源码统一以 `https://github.com/BQHM` 为最新事实来源；项目提问前优先读取 GitHub 最新 README、目录结构和关键源码。
 - 重要项目边界：`interview-guide` 不是用户项目，而是导师项目/参考项目；简历和面试项目经历只讲 `interview-assistant`，不能把 `interview-guide` 包装成个人项目。
@@ -192,8 +194,8 @@ currentQuestionIndex 为什么表示下一道待答题？
 当前本机训练暂停点：
 
 ```text
-已完成：interview-assistant 30 秒介绍、内容 hash 去重、并发重复上传、文件校验、Tika 解析、AI 失败兜底、Prompt Injection、AI 输出校验、HashMap put 流程、String 系列纠错。
-下一题：HashMap 为什么容量是 2 的幂？
+已完成：interview-assistant 30 秒介绍、内容 hash 去重、并发重复上传、文件校验、Tika 解析、AI 失败兜底、Prompt Injection、AI 输出校验、HashMap put 流程、String 系列纠错、HashMap 容量为什么是 2 的幂、HashMap 扩容阈值、HashMap 线程不安全基础表达。
+下一题：HashMap 第二轮 5 题：冲突解决、链表转红黑树、为什么转红黑树、key 为什么重写 equals/hashCode、equals 相等但 hashCode 不同会怎样。
 ```
 
 ### 第四步：继续第 1 周复习
