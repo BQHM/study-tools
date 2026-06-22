@@ -129,6 +129,12 @@
 - 再做一轮 `interview-assistant` 项目 5 题口述，重点检查是否还能讲清 hash 去重、AI 兜底和 Prompt Injection。
 - 后续择机把 `interview-assistant` 的“并发重复上传捕获唯一约束异常后回查旧记录”做成一个小接管任务。
 
+### 补充：README 文档职责治理
+
+- 检查当前仓库 Markdown 文档后，在 `README.md` 新增“文档唯一职责规则”。
+- 明确每个文档的唯一职责和不应该写入的内容，避免 `profile.md`、`jd-tracking.md`、`knowledge-answer-bank.md`、`HANDOFF.md` 等文件后续互相重复。
+- 当前策略是先保留现有文档结构，通过 README 约束归档规则；暂不删除、不移动、不合并文件。
+
 ## 2026-06-13
 
 ### 今日主题

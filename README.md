@@ -42,6 +42,41 @@ https://github.com/BQHM
 | `AGENTS.md` | Codex 协作规则：规定学习闭环、项目边界、文档维护方式和回答口径 |
 | `.gitignore` | Git 忽略规则：避免提交本地临时文件、密钥和构建产物 |
 
+## 文档唯一职责规则
+
+这个仓库允许同一个主题出现在不同文档中，但每个文档只维护一种形态，避免后续跨电脑同步时出现多个版本互相冲突。
+
+| 文档 | 唯一职责 | 不应该写入的内容 |
+| --- | --- | --- |
+| `README.md` | 仓库入口，说明仓库目标、文档地图、工作流和更新规则 | 具体学习笔记、每日进度、长篇答案 |
+| `AGENTS.md` | Codex 行为规则，固定协作流程、项目边界和回答口径 | 每日学习流水、具体 JD 拆解、临时对话记录 |
+| `HANDOFF.md` | 跨电脑、跨 Codex 会话的交接主档，记录当前阶段、未完成事项和下一步 | 完整教材内容、所有历史学习细节 |
+| `study-log.md` | 每日学习日志，记录当天学了什么、卡在哪里、下一步做什么 | 长期规则、完整答案卡、项目完整话术 |
+| `conversation-log.md` | 对话接续索引，只记录关键暂停点和影响后续学习的对话摘要 | 完整聊天记录、已经归档到主档的详细事实 |
+| `profile.md` | 个人画像事实库，维护学历、工作时间线、真实经历和表达边界 | 针对某个 JD 的投递策略、八股答案 |
+| `jd-tracking.md` | JD 台账，记录看过的岗位、要求、匹配点和简历定制方向 | 个人完整履历、通用教材内容 |
+| `java-backend-interview-plan.md` | 总学习计划，维护阶段顺序、每日节奏和主题优先级 | 具体题目的长篇答案、专项 JD 的全部细节 |
+| `java-ai-interview-study-guide.md` | 教材主体，系统讲 Java 后端、AI 工程化和系统设计知识 | 当天进度、交接状态、可直接背诵的短答案 |
+| `knowledge-answer-bank.md` | 面试答案库，保存可以直接口述的答案卡 | 长篇教材、完整学习路线、未经验证的项目包装 |
+| `interview-assistant-project-card.md` | `interview-assistant` 项目主卡，维护项目定位、流程、话术、追问和接管计划 | 参考项目 `interview-guide` 的成果包装、其他项目卡片 |
+| `ai-agent-jd-study-plan.md` | AI Agent 岗位专项学习计划，维护 Agent 方向能力拆解和项目改造路线 | 银行 Java 岗位包装、每日学习流水 |
+| `bank-java-jd-positioning.md` | 银行 Java 岗位专项，维护银行业务经历表达、岗位匹配和准备重点 | AI Agent 专项路线、通用 Java 教材 |
+
+更新信息时按下面规则归档：
+
+```text
+个人事实 -> profile.md
+新 JD -> jd-tracking.md
+总计划变化 -> java-backend-interview-plan.md
+系统知识讲解 -> java-ai-interview-study-guide.md
+可口述答案 -> knowledge-answer-bank.md
+项目话术和项目追问 -> 对应项目卡片
+当天学习结果 -> study-log.md
+换电脑/换会话交接 -> HANDOFF.md
+刚聊到哪、下次从哪继续 -> conversation-log.md
+Codex 应该如何协作 -> AGENTS.md
+```
+
 ## 推荐工作流
 
 ### 每次开始学习前
