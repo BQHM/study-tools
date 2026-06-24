@@ -102,3 +102,11 @@
 - 本次判断：用户已掌握 HashMap 的主线直觉，但还需要继续巩固 put 完整流程、链表转红黑树、equals/hashCode、扩容和线程不安全的面试表达。
 - 已更新：准备同步 `study-log.md` 和 `HANDOFF.md`。
 - 下次接续：继续 HashMap 第二轮 5 题：冲突解决、链表转红黑树、为什么转红黑树、key 为什么重写 `equals/hashCode`、equals 相等但 hashCode 不同会怎样。
+
+## 2026-06-24｜JD 台账提交与今日学习切入
+
+- 对话主题：用户要求先提交推送 JD 台账，再开始今天学习。
+- 用户补充：聊天记录也要随时记得登记，不能等很久才补。
+- 本次判断：关键对话、JD 分析、学习切换点和暂停点都应及时写入 `conversation-log.md`；今天从集合速通转入更贴银行 Java 主线的 Spring 事务。
+- 已更新：`jd-tracking.md` 已本地提交为 `f59a555 docs: add ai tooling jd notes`，但 `git push` 因 GitHub 凭据错误 `SEC_E_NO_CREDENTIALS` 未推送成功；本条记录补入 `conversation-log.md`。
+- 下次接续：继续 Spring 事务三问：事务解决什么问题、为什么同类内部调用可能失效、异常被 catch 不抛会怎样。
