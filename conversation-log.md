@@ -334,3 +334,11 @@
 - 本次判断：新增独立题库文件比塞进 `knowledge-answer-bank.md` 更合适；公司标签采用公开面经常见归纳，答案用官方文档和主流工程资料校准，避免把未经核实的公司题库当官方事实。
 - 已更新：新增 `java-ai-agent-interview-question-bank-2026.md`，并同步 `HANDOFF.md`。
 - 下次接续：从题库 P0 题开始做口述训练，优先顺序为 Spring/事务 -> MySQL -> Redis/幂等 -> Java 集合/线程池 -> AI Agent/RAG。
+
+## 2026-07-16｜题目和答案拆分
+
+- 对话主题：用户希望题目和答案分离，方便自检。
+- 用户补充：不希望打开题库时题目和答案混在一起，后续可能无法使用 AI，需要靠文件自测。
+- 本次判断：将原题库改成入口文件，新增题目册和答案册；题目册只保留 ID、星级、题目、公司/来源标签和自检要求，答案册保留完整答案和追问。
+- 已更新：`java-ai-agent-interview-question-bank-2026.md`、`java-ai-agent-interview-questions-2026.md`、`java-ai-agent-interview-answers-2026.md`，并同步 `HANDOFF.md`。
+- 下次接续：使用题目册从 ★★★★★ 开始口述训练，答完再按 ID 打开答案册核对。

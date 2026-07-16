@@ -11,6 +11,10 @@
 ### 已完成
 
 - 新增 `java-ai-agent-interview-question-bank-2026.md`。
+- 根据用户要求，将题目和答案拆分为：
+  - `java-ai-agent-interview-questions-2026.md`：题目册，用于自测。
+  - `java-ai-agent-interview-answers-2026.md`：答案册，用于按 ID 对答案。
+  - `java-ai-agent-interview-question-bank-2026.md`：入口说明。
 - 题库覆盖 Java 基础与集合、并发与线程池、JVM、Spring / Spring Boot / MyBatis、MySQL、Redis、MQ、系统设计、AI Agent / RAG / Tool Calling、用户项目专项题。
 - 每题按星级标注优先级，并加入公司/来源标签、简答和项目关联/追问。
 - 明确公司标签来自公开面经和题库归纳，不代表公司官方固定题库；技术答案以官方文档和主流工程实践校准。
