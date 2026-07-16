@@ -2,6 +2,34 @@
 
 > 每次学习结束后更新。重点写“学会了什么、还不会什么、下一步做什么”，不用写长篇流水账。
 
+## 2026-07-16
+
+### 今日主题
+
+离职求职冲刺资料建设：整理 Java + AI Agent 高频面试题离线题库。
+
+### 已完成
+
+- 新增 `java-ai-agent-interview-question-bank-2026.md`。
+- 题库覆盖 Java 基础与集合、并发与线程池、JVM、Spring / Spring Boot / MyBatis、MySQL、Redis、MQ、系统设计、AI Agent / RAG / Tool Calling、用户项目专项题。
+- 每题按星级标注优先级，并加入公司/来源标签、简答和项目关联/追问。
+- 明确公司标签来自公开面经和题库归纳，不代表公司官方固定题库；技术答案以官方文档和主流工程实践校准。
+
+### 今日理解
+
+- 当前已进入两周求职冲刺阶段，不能再按 6-8 周慢计划平均推进。
+- 离线题库应优先服务投递和面试，先覆盖 P0 高频题，再按 JD 查漏补缺。
+- `interview-assistant` 项目题要按“AI 辅助开发 + 用户梳理接管 MVC 主流程”的诚实口径准备。
+
+### 下一步
+
+- 从题库 P0 开始做口述训练：
+  1. Spring MVC / Spring Boot / IoC / AOP / 事务。
+  2. MySQL 索引、事务、MVCC、慢 SQL。
+  3. Redis 缓存、幂等、分布式锁。
+  4. Java HashMap、ConcurrentHashMap、线程池。
+  5. AI Agent、RAG、Tool Calling、Prompt Injection。
+
 ## 2026-06-21
 
 ### 今日主题

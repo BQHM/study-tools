@@ -326,3 +326,11 @@
 - 本次判断：后续不能再只按“后端 MVP/待接管”理解该项目；更稳妥的定位是“AI 辅助完成的前后端项目，用户需要梳理并掌握 MVC 主链路、核心模块和自己能讲清/能修改的部分”。写入简历前必须先读取 GitHub 最新代码和本地项目核验。
 - 已更新：本条记录补入 `conversation-log.md`；准备同步 `HANDOFF.md` 的项目状态提示。
 - 下次接续：读取 `interview-assistant` 最新代码，梳理前端页面 -> Controller -> Service -> Mapper/Repository -> DB/AI 的 MVC 主流程，并确认哪些部分用户能独立讲清。
+
+## 2026-07-16｜新增 Java + AI Agent 离线题库
+
+- 对话主题：用户要求整理近年高频 Java 和 AI Agent 面试题，包含题目、答案、优先级、星级和来源标签，方便后续无法使用 AI 时离线学习。
+- 用户补充：需要尽量全面，覆盖 Java 与 AI Agent 等方向，按优先级整理，并标注类似“哪家公司面试问过”的来源信息。
+- 本次判断：新增独立题库文件比塞进 `knowledge-answer-bank.md` 更合适；公司标签采用公开面经常见归纳，答案用官方文档和主流工程资料校准，避免把未经核实的公司题库当官方事实。
+- 已更新：新增 `java-ai-agent-interview-question-bank-2026.md`，并同步 `HANDOFF.md`。
+- 下次接续：从题库 P0 题开始做口述训练，优先顺序为 Spring/事务 -> MySQL -> Redis/幂等 -> Java 集合/线程池 -> AI Agent/RAG。
