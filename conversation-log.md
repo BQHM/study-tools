@@ -110,3 +110,203 @@
 - 本次判断：关键对话、JD 分析、学习切换点和暂停点都应及时写入 `conversation-log.md`；今天从集合速通转入更贴银行 Java 主线的 Spring 事务。
 - 已更新：`jd-tracking.md` 已本地提交为 `f59a555 docs: add ai tooling jd notes`，但 `git push` 因 GitHub 凭据错误 `SEC_E_NO_CREDENTIALS` 未推送成功；本条记录补入 `conversation-log.md`。
 - 下次接续：继续 Spring 事务三问：事务解决什么问题、为什么同类内部调用可能失效、异常被 catch 不抛会怎样。
+
+## 2026-06-30｜Spring 事务三问复述
+
+- 对话主题：继续 Spring 事务学习检查。
+- 用户补充：事务解决“一起完成或一起回滚”；同类内部调用会跳过代理，导致事务没有启用；异常被 catch 不抛时，用户初答为“事务不生效”。
+- 本次判断：前两题主线正确；第三题需要纠正为“事务本身可能已经开启，但异常被吞掉后 Spring 感知不到失败，可能不会回滚而是提交”。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续讲 Spring 事务回滚规则：`RuntimeException`、检查异常、`rollbackFor`，再练银行交易场景表达。
+
+## 2026-06-30｜Spring 默认回滚规则
+
+- 对话主题：检查 `@Transactional` 默认回滚规则。
+- 用户补充：开户交易中外部接口失败抛普通 `Exception`，普通 `@Transactional` 不一定回滚，因为普通 `Exception` 默认不一定触发回滚。
+- 本次判断：用户已理解 Spring 默认主要对 `RuntimeException` / `Error` 回滚；下一步要补 `rollbackFor = Exception.class` 的表达和银行交易一致性场景。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：练习回答“银行交易里为什么常配置 `rollbackFor = Exception.class`，以及异常被 catch 后如何处理”。
+
+## 2026-06-30｜支取交易异常吞掉场景
+
+- 对话主题：用支取交易场景练习 Spring 事务和异常处理。
+- 用户补充：如果扣减账户余额成功、插入交易流水失败，但代码 catch 异常只打印日志不抛，可能导致余额扣款成功、流水失败、交易还正常结束；应该改成 catch 后报错并抛出异常。
+- 本次判断：用户已抓住银行交易一致性风险；需要补充面试表达：异常要继续抛出或转换为运行时异常，必要时配置 `rollbackFor = Exception.class`，避免 Spring 提交事务。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续讲 Spring 事务传播行为中最常见的 `REQUIRED`，再联系开户/支取交易边界。
+
+## 2026-06-30｜Spring 学习入口调整
+
+- 对话主题：用户指出 Spring 整体仍模糊，不应直接专攻事务。
+- 用户补充：以前学习过 Servlet 和三层架构。
+- 本次判断：后续讲 Spring 应从用户已有的 Servlet / 三层架构认知出发，先建立 Spring MVC、Controller-Service-Mapper、IoC、AOP 的整体地图，再回到事务。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：用 Servlet 三层架构对照 Spring MVC / Spring Boot，讲清 Spring 到底替开发者省掉了什么。
+
+## 2026-06-30｜Spring 短期面试学习策略
+
+- 对话主题：用户询问 Spring 高频知识点、如何在时间少的情况下快速应对面试，以及哪些工作中用得多。
+- 用户补充：时间比较少，希望不要大而全学习。
+- 本次判断：Spring 后续按“面试高频 + 工作常用 + 能关联银行交易”排序，优先学 Spring MVC 请求流程、IoC/DI、AOP/事务、Bean 生命周期、事务失效、常用注解和异常处理；暂不深挖冷门源码。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：按 3 天速通路线推进 Spring：Day 1 整体地图和请求流程，Day 2 IoC/Bean/AOP/事务，Day 3 事务失效和项目话术。
+
+## 2026-06-30｜Tomcat 与 Spring Boot 启动疑问
+
+- 对话主题：用户询问 Spring 整体地图、MVC 请求流程，以及为什么以前 Servlet 学习要用 Tomcat 启动，现在项目好像不用单独配置 Tomcat。
+- 用户补充：以前学习时记得要用 Tomcat 启动。
+- 本次判断：需要讲清 Servlet 容器、外部 Tomcat、Spring MVC 的 `DispatcherServlet`、Spring Boot 内嵌 Tomcat 和自动配置之间的关系。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续用“外部 Tomcat 部署 war”对比“Spring Boot 内嵌 Tomcat 跑 jar”，再画一次请求从 Tomcat 到 Controller 的流程。
+
+## 2026-07-02｜DispatcherServlet 职责复述
+
+- 对话主题：检查用户对 `DispatcherServlet` 的理解。
+- 用户补充：`DispatcherServlet` 用来接收来自前端的 request。
+- 本次判断：方向正确，但需要补充完整：请求先到 Tomcat，再交给 `DispatcherServlet`；`DispatcherServlet` 不只接收请求，还负责分发请求、找 Controller、参数绑定、调用处理链并组织返回。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续 Spring MVC 请求流程：Tomcat -> DispatcherServlet -> HandlerMapping -> Controller -> Service -> Mapper -> DB -> JSON。
+
+## 2026-07-02｜Spring MVC 与 Spring Boot 关系
+
+- 对话主题：检查用户对 Spring / Spring MVC / Spring Boot 三者关系的理解。
+- 用户补充：Spring MVC 是 Spring 里面做 Web 的部分；Spring Boot 暂时不知道。
+- 本次判断：用户已抓住 Spring MVC 的核心定位；下一步要用“小白版”讲清 Spring Boot 是简化 Spring 项目启动和配置的工具，包含内嵌 Tomcat、自动配置和 starter 依赖。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：让用户复述“Spring 是底座，Spring MVC 管 Web 请求，Spring Boot 负责快速启动和自动配置”。
+
+## 2026-07-02｜Spring Boot 与 Spring MVC 复述通过
+
+- 对话主题：检查用户复述 Spring Boot 和 Spring MVC 的区别。
+- 用户补充：Spring Boot 是快速启动 Spring 项目的工具，减少配置、内嵌 Tomcat；Spring MVC 是 Spring 里的 Web 模块，负责接收请求并找到 Controller。
+- 本次判断：该表达已经可用于面试初答；后续需要补上 Spring 是底座，以及 Spring Boot 不是替代 Spring MVC，而是把 Spring MVC 等能力更方便地启动起来。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续学习 Controller 常用注解：`@Controller`、`@RestController`、`@RequestMapping`、`@GetMapping`、`@PostMapping`。
+
+## 2026-07-02｜Controller 注解复健
+
+- 对话主题：学习 `@Controller` 和 `@RestController` 的区别。
+- 用户补充：`@RestController` 是 `@Controller` + `@Response` 的结合。
+- 本次判断：理解方向正确，但注解名需要纠正为 `@ResponseBody`；核心区别是 `@RestController` 默认把方法返回值写入响应体，常用于返回 JSON。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续区分页面跳转场景用 `@Controller`，前后端分离接口返回 JSON 场景用 `@RestController`。
+
+## 2026-07-02｜Mapping 注解待复健
+
+- 对话主题：检查用户对 `@RequestMapping`、`@GetMapping`、`@PostMapping` 的理解。
+- 用户补充：暂时不知道这几个注解的作用。
+- 本次判断：需要用小白版讲清“URL 和 Controller 方法的绑定关系”，再区分 GET 查询、POST 新增/提交。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：让用户用自己的话解释 `GET /users/1` 和 `POST /users` 分别适合什么场景。
+
+## 2026-07-02｜GET 与 POST 场景判断通过
+
+- 对话主题：检查用户对 GET / POST 使用场景的直觉。
+- 用户补充：`GET /account/detail` 是查账户信息，`POST /account/open` 是开户提交。
+- 本次判断：用户已建立 GET 偏查询、POST 偏提交/新增的基本判断；后续可继续补 `@RequestParam`、`@PathVariable`、`@RequestBody` 三类参数接收方式。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：学习 Controller 如何接收前端传来的参数。
+
+## 2026-07-02｜Controller 参数注解初步判断
+
+- 对话主题：学习 `@RequestParam`、`@PathVariable`、`@RequestBody` 的使用场景。
+- 用户补充：能判断 `/account/detail?accountNo=123` 这种问号后的参数应使用 `@RequestParam`；追问哪种注解用得最多。
+- 本次判断：需要按实际开发场景解释：前后端分离业务接口中 `@RequestBody` 很常见；简单查询和少量条件常用 `@RequestParam`；REST 风格资源路径常用 `@PathVariable`。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续用银行开户、账户查询、交易详情三个例子区分三类参数注解。
+
+## 2026-07-02｜RequestBody 场景判断通过
+
+- 对话主题：检查用户对 `@RequestBody` 使用场景的理解。
+- 用户补充：能判断 `POST /account/open` 且请求体为姓名、证件号、手机号等 JSON 字段时，应使用 `@RequestBody`。
+- 本次判断：用户已能区分简单查询参数和 JSON 请求体；下一步补 `@PathVariable` 的资源路径场景，并形成三类参数注解的口述答案。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：用 `GET /transactions/{tranId}` 检查 `@PathVariable`。
+
+## 2026-07-02｜PathVariable 场景判断通过
+
+- 对话主题：检查用户对 `@PathVariable` 使用场景的理解。
+- 用户补充：能判断 `GET /transactions/202507020001` 这种路径中的交易 ID 应使用 `@PathVariable`。
+- 本次判断：用户已能区分三类 Controller 参数注解：问号后少量参数用 `@RequestParam`，路径片段用 `@PathVariable`，JSON 请求体用 `@RequestBody`。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：整理 Controller 注解口述答案后，进入 `@Service`、`@Component`、Bean 和 IoC。
+
+## 2026-07-02｜Service 与 Component 初步理解
+
+- 对话主题：学习 Spring 中对象如何交给容器管理。
+- 用户补充：`@Service` 表示 Service 层 / 业务层；暂时不知道 `@Component`。
+- 本次判断：用户已理解 `@Service` 的分层语义；下一步需要讲清 `@Component` 是通用组件注解，`@Service` 本质上也是一种被 Spring 管理的 Bean，只是语义更明确。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续讲 Bean、IoC，以及为什么加了注解后不用自己到处 `new` 对象。
+
+## 2026-07-02｜Bean 管理与代理概念纠偏
+
+- 对话主题：检查用户对 Spring 中“不用自己 new 对象”的理解。
+- 用户补充：不需要自己 `new`，Bean 交由 Spring 代理。
+- 本次判断：方向接近，但需要纠正表达：普通 Bean 是交给 Spring 容器创建和管理，不一定都是代理；涉及 AOP、事务等增强时，Spring 才可能创建代理对象。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续讲 IoC / DI：对象创建交给 Spring，依赖对象由 Spring 自动注入。
+
+## 2026-07-02｜IoC DI AOP 概念混淆
+
+- 对话主题：用户反馈 IoC、DI、AOP 容易记混。
+- 用户补充：IoC、DI、AOP 三个概念老是混在一起。
+- 本次判断：需要用最简单的边界区分：IoC 是对象创建权交给 Spring，DI 是 Spring 把依赖对象塞进来，AOP 是给方法统一加日志、事务、权限等通用逻辑。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：用三个场景题检查区分：不用 new Service、Service 需要 Mapper、方法前后加事务/日志。
+
+## 2026-07-02｜IoC DI AOP 复述通过
+
+- 对话主题：检查用户对 IoC、DI、AOP 英文全称和含义的复述。
+- 用户补充：IoC 是控制反转，由 Spring 控制和管理对象；DI 是依赖注入，需要什么依赖由 Spring 帮忙注入；AOP 是面向切面编程，把事务、日志等通用逻辑抽出来统一加。
+- 本次判断：用户已能区分三者核心含义；表达上注意 AOP 是“面向切面编程”，DI 用“注入依赖”比“加依赖”更准确。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续用场景题巩固 IoC / DI / AOP，然后回到 Spring 事务为什么依赖 AOP。
+
+## 2026-07-02｜Spring 事务与 AOP 关系待理解
+
+- 对话主题：追问为什么 Spring 事务底层和 AOP 有关系。
+- 用户补充：暂时不知道。
+- 本次判断：需要从“事务是方法前后统一加的逻辑”讲起：方法执行前开启事务，方法成功后提交，方法异常后回滚；这正符合 AOP 在目标方法前后做增强的思想。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：用开户交易解释 `@Transactional` 背后是代理对象在方法前后做事务控制。
+
+## 2026-07-07｜求职方向偏好变化
+
+- 对话主题：用户表达当前工作状态和下一份工作的偏好。
+- 用户补充：不想继续做外包；当前工作枯燥、成长慢、每天加班；希望去自研类岗位，能学到东西，并且加班有加班费。
+- 本次判断：这是后续简历定位、JD 筛选和面试准备的重要约束；应优先关注自研团队、产品研发、金融科技自研、银行科技子公司或有明确加班补偿制度的岗位。
+- 已更新：本条记录补入 `conversation-log.md`；暂不直接写入 `profile.md`，需要后续访谈确认表达边界。
+- 下次接续：确认下一份工作的硬性条件和可接受妥协项，例如是否接受驻场、是否接受外包性质、城市、薪资、加班强度、成长方向。
+
+## 2026-07-07｜下份工作硬性条件
+
+- 对话主题：确认用户对下一份工作的硬性条件。
+- 用户补充：如果下份工作仍然加班，最重要的前提是有加班费。
+- 本次判断：后续筛选 JD 和面试反问时，需要重点确认加班制度、加班费或调休规则，避免进入无偿高强度加班环境。
+- 已更新：本条记录补入 `conversation-log.md`；暂不直接写入 `profile.md`，待后续统一确认求职偏好后再更新。
+- 下次接续：继续确认是否完全排斥外包/驻场，以及自研岗位的目标城市、薪资底线和成长方向。
+
+## 2026-07-07｜当前换岗动因补充
+
+- 对话主题：用户进一步说明想离开当前工作的现实原因。
+- 用户补充：已工作约两年，但薪资长期没有上涨；当前加班没有加班费，收入回报与工作强度不匹配。
+- 本次判断：用户换岗动因不只是追求技术成长，也包括薪资增长和劳动回报不匹配；后续求职策略应同时关注岗位性质、自研程度、薪资涨幅和加班补偿机制。
+- 已更新：本条记录补入 `conversation-log.md`；为保护隐私，未记录具体到手金额。
+- 下次接续：确认目标薪资区间、最低可接受底线、是否接受阶段性加班以及哪些岗位坚决不投。
+
+## 2026-07-09｜事务异常吞掉复述通过
+
+- 对话主题：检查用户对 `@Transactional` 异常回滚条件的理解。
+- 用户补充：异常要抛出来才能回滚，不能直接 catch 后不抛。
+- 本次判断：用户已抓住核心：异常被吞掉后，事务代理可能认为方法正常结束并提交；面试表达需要补充“抛到事务代理外面”和“默认回滚规则”。
+- 已更新：本条记录补入 `conversation-log.md`。
+- 下次接续：继续讲普通 `Exception` 默认不一定回滚，以及为什么银行交易常用 `rollbackFor = Exception.class`。
+
+## 2026-07-16｜离职求职冲刺阶段切换
+
+- 对话主题：用户说明当前公司补贴下降，准备从宁波出差状态直接离职，并在月底前后回无锡找工作。
+- 用户补充：当前是 7 月中旬，计划提离职；这段时间需要抓紧补充知识面和相关项目，目标是尽快具备投递和面试能力。
+- 本次判断：后续学习节奏应切换为“求职冲刺模式”，优先补简历项目表达、银行 Java 高频知识、Spring/MyBatis/MySQL/Redis/MQ、离职原因话术和 JD 筛选，不再按 6-8 周慢计划推进。
+- 已更新：本条记录补入 `conversation-log.md`；准备同步 `HANDOFF.md` 的当前阶段。
+- 下次接续：制定 2026-07-16 到月底的两周冲刺安排，并先从简历主线、项目话术和高频八股清单开始。
