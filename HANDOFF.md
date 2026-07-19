@@ -6,7 +6,7 @@
 
 ## 当前日期
 
-2026-07-16
+2026-07-19
 
 ## 当前阶段
 
@@ -17,6 +17,7 @@
 - 当前情况已从普通复习切换为紧急求职冲刺：用户因公司补贴下降、长期加班无加班费、成长和薪资回报不足，准备 2026 年 7 月中旬提离职，并在月底前后回无锡找工作。
 - 当前驻场时间线：用户从 2026-06-01 起到现在一直在宁波驻场，参与宁波银行数币相关工作。
 - `interview-assistant` 状态有更新：用户补充目前大体完成了后端 + 前端，其中不少内容是 AI 辅助开发，但已经有大体 MVC 流程；后续要先核验 GitHub/本地最新代码，再更新项目卡、简历表达和面试话术。
+- 新增 `interview-assistant-daily-review.md`：后续每天学习、求职冲刺或项目复盘前，先用 5-10 分钟回顾 `interview-assistant` 的项目定位、MVC 主链路、早期模块、失败场景和 AI 辅助边界，避免早期项目遗忘。
 - 已新增并拆分 Java + AI Agent 离线冲刺题库：`java-ai-agent-interview-question-bank-2026.md` 是入口，`java-ai-agent-interview-questions-2026.md` 是题目册，`java-ai-agent-interview-answers-2026.md` 是答案册；后续冲刺自检先看题目册，再按 ID 对答案。
 - 后续默认不再按 6-8 周慢计划推进，而是按 2026-07-16 到月底的两周冲刺节奏推进：简历主线、项目话术、高频八股、JD 筛选、离职原因话术和面试反问。
 - 投递优先级调整为：自研 Java 后端、产品研发、金融科技自研、银行科技子公司；谨慎投递外包、长期驻场、无明确加班补偿的岗位。
@@ -203,6 +204,13 @@ currentQuestionIndex 为什么表示下一道待答题？
 ```text
 已完成：interview-assistant 30 秒介绍、内容 hash 去重、并发重复上传、文件校验、Tika 解析、AI 失败兜底、Prompt Injection、AI 输出校验、HashMap put 流程、String 系列纠错、HashMap 容量为什么是 2 的幂、HashMap 扩容阈值、HashMap 线程不安全基础表达。
 下一题：HashMap 第二轮 5 题：冲突解决、链表转红黑树、为什么转红黑树、key 为什么重写 equals/hashCode、equals 相等但 hashCode 不同会怎样。
+```
+
+当前每日固定动作：
+
+```text
+每天学习或求职冲刺前，先按 interview-assistant-daily-review.md 做 5-10 分钟项目回顾。
+第一问固定为：你先用一句话说，interview-assistant 是做什么的？
 ```
 
 ### 第四步：继续第 1 周复习

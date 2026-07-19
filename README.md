@@ -36,6 +36,7 @@ https://github.com/BQHM
 | `bank-java-jd-positioning.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
 | `ai-agent-jd-study-plan.md` | AI Agent 岗位专项：AI Agent JD 拆解、Tool Calling、Memory、Planning、RAG 和项目改造路线 |
 | `interview-assistant-project-card.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
+| `interview-assistant-daily-review.md` | `interview-assistant` 每日回顾清单：每天 5-10 分钟复盘 MVC 主链路、早期模块和 AI 辅助边界 |
 | `java-ai-interview-study-guide.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
 | `study-log.md` | 学习日志：记录每天学了什么、理解了什么、还卡在哪里、下一步做什么 |
 | `HANDOFF.md` | 大任务交接文档：跨电脑/跨会话时优先读取，记录当前大任务、阶段、已完成、未完成和下一步 |
@@ -59,6 +60,7 @@ https://github.com/BQHM
 | `java-ai-interview-study-guide.md` | 教材主体，系统讲 Java 后端、AI 工程化和系统设计知识 | 当天进度、交接状态、可直接背诵的短答案 |
 | `knowledge-answer-bank.md` | 面试答案库，保存可以直接口述的答案卡 | 长篇教材、完整学习路线、未经验证的项目包装 |
 | `interview-assistant-project-card.md` | `interview-assistant` 项目主卡，维护项目定位、流程、话术、追问和接管计划 | 参考项目 `interview-guide` 的成果包装、其他项目卡片 |
+| `interview-assistant-daily-review.md` | `interview-assistant` 每日回顾清单，维护固定自检流程、轮换主题和口述模板 | 详细源码分析、完整项目卡、其他项目复盘 |
 | `ai-agent-jd-study-plan.md` | AI Agent 岗位专项学习计划，维护 Agent 方向能力拆解和项目改造路线 | 银行 Java 岗位包装、每日学习流水 |
 | `bank-java-jd-positioning.md` | 银行 Java 岗位专项，维护银行业务经历表达、岗位匹配和准备重点 | AI Agent 专项路线、通用 Java 教材 |
 
@@ -71,6 +73,7 @@ https://github.com/BQHM
 系统知识讲解 -> java-ai-interview-study-guide.md
 可口述答案 -> knowledge-answer-bank.md
 项目话术和项目追问 -> 对应项目卡片
+interview-assistant 每日短复盘 -> interview-assistant-daily-review.md
 当天学习结果 -> study-log.md
 当前大任务、阶段、跨电脑交接 -> HANDOFF.md
 每次对话重点、刚聊到哪、下次从哪继续 -> conversation-log.md

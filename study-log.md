@@ -2,6 +2,31 @@
 
 > 每次学习结束后更新。重点写“学会了什么、还不会什么、下一步做什么”，不用写长篇流水账。
 
+## 2026-07-19
+
+### 今日主题
+
+建立 `interview-assistant` 每日回顾机制。
+
+### 已完成
+
+- 新增 `interview-assistant-daily-review.md`。
+- 将每日回顾规则写入 `AGENTS.md`，后续学习或求职冲刺前先做 5-10 分钟项目复盘。
+- 更新 `HANDOFF.md` 和 `README.md`，把该清单设为 `interview-assistant` 长周期项目的固定复习入口。
+- 更新 `conversation-log.md`，记录下次开场先回顾项目一句话定位和 MVC 主链路。
+
+### 今日理解
+
+- `interview-assistant` 项目周期较长，且有 AI 辅助开发内容，单靠偶尔大复盘容易忘早期模块。
+- 更适合每天短复盘：项目定位、MVC 主链路、早期模块、失败场景、AI 辅助边界。
+
+### 下一步
+
+- 下次学习开始先按 `interview-assistant-daily-review.md` 提问：
+  1. 一句话说明 `interview-assistant` 是做什么的。
+  2. 复述一条前端页面 -> Controller -> Service -> DB/AI -> 前端返回的链路。
+  3. 抽一个早期模块讲失败场景和自己能接管的部分。
+
 ## 2026-07-16
 
 ### 今日主题

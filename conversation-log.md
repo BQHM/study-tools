@@ -342,3 +342,11 @@
 - 本次判断：将原题库改成入口文件，新增题目册和答案册；题目册只保留 ID、星级、题目、公司/来源标签和自检要求，答案册保留完整答案和追问。
 - 已更新：`java-ai-agent-interview-question-bank-2026.md`、`java-ai-agent-interview-questions-2026.md`、`java-ai-agent-interview-answers-2026.md`，并同步 `HANDOFF.md`。
 - 下次接续：使用题目册从 ★★★★★ 开始口述训练，答完再按 ID 打开答案册核对。
+
+## 2026-07-19｜interview-assistant 每日回顾机制
+
+- 对话主题：用户希望每天由 Codex 带着回顾 `interview-assistant`，避免长期项目和早期模块遗忘。
+- 用户补充：`interview-assistant` 项目周期比较长，虽然现在大体有 MVC 流程，但早期项目内容容易忘。
+- 本次判断：后续学习和求职冲刺前应先进行 5-10 分钟项目唤醒，重点回顾项目定位、MVC 主链路、一个早期模块、失败场景和 AI 辅助边界。
+- 已更新：新增 `interview-assistant-daily-review.md`，并同步 `AGENTS.md`、`HANDOFF.md`、`README.md`、`study-log.md`。
+- 下次接续：每天开场先问“你先用一句话说，interview-assistant 是做什么的？”，再按清单抽一个模块复盘。

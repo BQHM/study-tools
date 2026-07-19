@@ -33,6 +33,29 @@
 
 如果用户没有明确指定学习主题，默认按 `java-backend-interview-plan.md` 的顺序推进。
 
+### interview-assistant 每日回顾协议
+
+当用户进入学习、求职冲刺、项目复盘或面试准备状态时，Codex 必须先带用户用 5-10 分钟回顾 `interview-assistant`，因为该项目周期较长，且包含不少 AI 辅助开发内容，用户容易遗忘早期模块。
+
+固定流程：
+
+1. 先读取 `interview-assistant-daily-review.md`。
+2. 再按需要读取 `interview-assistant-project-card.md`。
+3. 如果本轮要讲项目细节、简历表达、代码链路或面试追问，必须优先从 GitHub / 本地最新代码核验，不要只凭旧项目卡或记忆。
+4. 每天只回顾一小轮，不要一次性铺太多：
+   - 一句话项目定位。
+   - 一条 MVC 主链路。
+   - 一个早期模块。
+   - 一个失败场景或边界问题。
+   - AI 辅助开发与用户真实掌握部分的边界。
+5. 用户复述后，Codex 要指出一个表达可改进点，再继续当天主题。
+
+默认开场问题：
+
+```text
+我们先用 5 分钟回顾 interview-assistant：你先用一句话说，这个项目是做什么的？
+```
+
 ### profile 补充访谈协议
 
 当用户说“完善 profile”“补充个人画像”“继续补 profile”“先了解我”“慢慢问细节”或类似表达时，Codex 必须进入访谈模式，而不是直接修改 `profile.md`。
