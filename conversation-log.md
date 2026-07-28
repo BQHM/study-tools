@@ -350,3 +350,11 @@
 - 本次判断：后续学习和求职冲刺前应先进行 5-10 分钟项目唤醒，重点回顾项目定位、MVC 主链路、一个早期模块、失败场景和 AI 辅助边界。
 - 已更新：新增 `interview-assistant-daily-review.md`，并同步 `AGENTS.md`、`HANDOFF.md`、`README.md`、`study-log.md`。
 - 下次接续：每天开场先问“你先用一句话说，interview-assistant 是做什么的？”，再按清单抽一个模块复盘。
+## 2026-07-28｜interview-assistant 真实技术面试式复盘
+
+- 用户要求项目复盘改为真实技术面试官追问，规则已写入 `AGENTS.md`：基于真实源码，一次一题，逐层追问异常、并发、一致性、边界和取舍。
+- 已复盘简历上传：前端 `FormData(file)` -> `ResumeController` -> `ResumeUploadService`；类型/大小校验、hash 去重、Tika 文本解析、对象存储、数据库保存、AI 分析和规则兜底。
+- 已重新检查本地 `interview-assistant`：AI 出题、AI 单题评估及规则兜底已实现；会话详情、历史详情、报告均从独立答案表与题目快照聚合，不再是待完成项。
+- 远程同步失败：Git 代理 `127.0.0.1:7890` 不可连接，因此本轮结论基于本地源码，GitHub 最新性未确认。
+- 用户当前回答进度：能说明 Controller/Service 分层、Tika 作用、原始文件放对象存储、AI 失败不阻塞上传；曾把 hash 与文件类型校验混淆，已纠正。
+- 下次接续问题：`ResumeUploadService` 为什么先计算内容 hash 并查重，再执行 Tika 解析、对象存储上传和 AI 分析？如果把查重放到最后，会有什么问题？

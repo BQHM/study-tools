@@ -304,3 +304,13 @@
 - 按 `java-backend-interview-plan.md` 第一阶段 Day 1，先从 GitHub 获取 `interview-assistant` 最新内容，再整理项目卡片。
 - 写 `interview-assistant` 的 30 秒、1 分钟、3 分钟话术。
 - 从项目中反推必会题，再补充到 `knowledge-answer-bank.md`。
+## 2026-07-28｜interview-assistant 真实代码复核与面试追问模式
+
+- 本轮目标：按真实技术面试官方式复盘 `interview-assistant`，不再只背概念。
+- 环境限制：`git pull` 因本机代理 `127.0.0.1:7890` 不可连接而失败；本轮以本地项目源码为准，无法确认 GitHub 是否有更新。
+- 已复盘简历上传链路：前端 `FormData` 的 `file` 参数 -> `ResumeController` -> `ResumeUploadService`；文件校验、内容 hash 查重、Tika 解析、对象存储、数据库保存、AI 分析和规则兜底。
+- 已核验面试主链路：创建会话会校验简历、复用同一简历和面试方向的未完成会话、AI 出题失败时回退规则题目；提交答案会校验会话状态和题号顺序，保存独立答案记录，执行 AI 单题评估和规则兜底，再推进 `currentQuestionIndex`。
+- 已核验历史和报告：会话详情、历史详情、报告均从 `interview_answers` 查询答案，再与 `questionsJson` 题目快照聚合；答案表有 `(session_id, question_index)` 唯一约束。
+- 用户当前已能回答：Controller 与 Service 分层、文件内容 hash 去重、Tika 的职责、对象存储的必要性、AI 失败不阻塞主流程。
+- 当前卡壳：尚未回答“查重为何必须放在解析、对象存储和 AI 调用之前”，也未开始并发和事务一致性追问。
+- 下次接续：以真实面试官身份提问“为什么先 hash 查重再解析/上传/调用 AI？如果查重放最后，会浪费或产生什么问题？”。
