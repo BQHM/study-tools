@@ -28,18 +28,18 @@ https://github.com/BQHM
 
 | 文件 | 用途 |
 | --- | --- |
-| `profile.md` | 个人画像主档：学历/工作时间线、真实经历、求职主线、表达边界和待补充事实 |
-| `jd-tracking.md` | JD 台账：把看过的 JD 按分隔线记录在一个文件里，保留厂商、岗位、匹配点和简历定制方向 |
-| `conversation-log.md` | 对话接续记录：记录每次对话重点、暂停点和下次接续问题，方便换设备继续 |
-| `java-backend-interview-plan.md` | Java 后端 6-8 周学习计划：阶段安排、八股顺序、银行 Java 和 AI Agent JD 对齐路线 |
-| `knowledge-answer-bank.md` | 高频答案库：沉淀能直接口述的 Java、数据库、Redis、MQ、AI、项目和岗位定位答案 |
-| `bank-java-jd-positioning.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
-| `ai-agent-jd-study-plan.md` | AI Agent 岗位专项：AI Agent JD 拆解、Tool Calling、Memory、Planning、RAG 和项目改造路线 |
-| `interview-assistant-project-card.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
-| `interview-assistant-daily-review.md` | `interview-assistant` 每日回顾清单：每天 5-10 分钟复盘 MVC 主链路、早期模块和 AI 辅助边界 |
-| `java-ai-interview-study-guide.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
-| `study-log.md` | 学习日志：记录每天学了什么、理解了什么、还卡在哪里、下一步做什么 |
-| `HANDOFF.md` | 大任务交接文档：跨电脑/跨会话时优先读取，记录当前大任务、阶段、已完成、未完成和下一步 |
+| `00_个人画像.md` | 个人画像主档：学历/工作时间线、真实经历、求职主线、表达边界和待补充事实 |
+| `04_JD台账.md` | JD 台账：把看过的 JD 按分隔线记录在一个文件里，保留厂商、岗位、匹配点和简历定制方向 |
+| `02_对话记录.md` | 对话接续记录：记录每次对话重点、暂停点和下次接续问题，方便换设备继续 |
+| `05_总学习计划.md` | Java 后端 6-8 周学习计划：阶段安排、八股顺序、银行 Java 和 AI Agent JD 对齐路线 |
+| `07_面试答案库.md` | 高频答案库：沉淀能直接口述的 Java、数据库、Redis、MQ、AI、项目和岗位定位答案 |
+| `11_银行Java专项.md` | 银行 Java 岗位专项：银行 JD 匹配、长亮/宁波银行经历包装、开户/存入/支取话术和八股优先级 |
+| `12_AI-Agent专项.md` | AI Agent 岗位专项：AI Agent JD 拆解、Tool Calling、Memory、Planning、RAG 和项目改造路线 |
+| `13_项目卡.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
+| `14_项目每日回顾.md` | `interview-assistant` 每日回顾清单：每天 5-10 分钟复盘 MVC 主链路、早期模块和 AI 辅助边界 |
+| `06_学习教材.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
+| `03_学习日志.md` | 学习日志：记录每天学了什么、理解了什么、还卡在哪里、下一步做什么 |
+| `01_交接状态.md` | 大任务交接文档：跨电脑/跨会话时优先读取，记录当前大任务、阶段、已完成、未完成和下一步 |
 | `AGENTS.md` | Codex 协作规则：规定学习闭环、项目边界、文档维护方式和回答口径 |
 | `.gitignore` | Git 忽略规则：避免提交本地临时文件、密钥和构建产物 |
 
@@ -51,32 +51,32 @@ https://github.com/BQHM
 | --- | --- | --- |
 | `README.md` | 仓库入口，说明仓库目标、文档地图、工作流和更新规则 | 具体学习笔记、每日进度、长篇答案 |
 | `AGENTS.md` | Codex 行为规则，固定协作流程、项目边界和回答口径 | 每日学习流水、具体 JD 拆解、临时对话记录 |
-| `HANDOFF.md` | 大任务交接主档，记录当前大任务、阶段、未完成事项和下一步 | 完整教材内容、所有历史学习细节、每轮对话细节 |
-| `study-log.md` | 每日学习日志，记录当天学了什么、卡在哪里、下一步做什么 | 长期规则、完整答案卡、项目完整话术 |
-| `conversation-log.md` | 对话接续索引，记录每次对话重点、暂停点和下次接续问题 | 完整聊天记录、已经归档到主档的详细事实、大任务阶段规划 |
-| `profile.md` | 个人画像事实库，维护学历、工作时间线、真实经历和表达边界 | 针对某个 JD 的投递策略、八股答案 |
-| `jd-tracking.md` | JD 台账，记录看过的岗位、要求、匹配点和简历定制方向 | 个人完整履历、通用教材内容 |
-| `java-backend-interview-plan.md` | 总学习计划，维护阶段顺序、每日节奏和主题优先级 | 具体题目的长篇答案、专项 JD 的全部细节 |
-| `java-ai-interview-study-guide.md` | 教材主体，系统讲 Java 后端、AI 工程化和系统设计知识 | 当天进度、交接状态、可直接背诵的短答案 |
-| `knowledge-answer-bank.md` | 面试答案库，保存可以直接口述的答案卡 | 长篇教材、完整学习路线、未经验证的项目包装 |
-| `interview-assistant-project-card.md` | `interview-assistant` 项目主卡，维护项目定位、流程、话术、追问和接管计划 | 参考项目 `interview-guide` 的成果包装、其他项目卡片 |
-| `interview-assistant-daily-review.md` | `interview-assistant` 每日回顾清单，维护固定自检流程、轮换主题和口述模板 | 详细源码分析、完整项目卡、其他项目复盘 |
-| `ai-agent-jd-study-plan.md` | AI Agent 岗位专项学习计划，维护 Agent 方向能力拆解和项目改造路线 | 银行 Java 岗位包装、每日学习流水 |
-| `bank-java-jd-positioning.md` | 银行 Java 岗位专项，维护银行业务经历表达、岗位匹配和准备重点 | AI Agent 专项路线、通用 Java 教材 |
+| `01_交接状态.md` | 大任务交接主档，记录当前大任务、阶段、未完成事项和下一步 | 完整教材内容、所有历史学习细节、每轮对话细节 |
+| `03_学习日志.md` | 每日学习日志，记录当天学了什么、卡在哪里、下一步做什么 | 长期规则、完整答案卡、项目完整话术 |
+| `02_对话记录.md` | 对话接续索引，记录每次对话重点、暂停点和下次接续问题 | 完整聊天记录、已经归档到主档的详细事实、大任务阶段规划 |
+| `00_个人画像.md` | 个人画像事实库，维护学历、工作时间线、真实经历和表达边界 | 针对某个 JD 的投递策略、八股答案 |
+| `04_JD台账.md` | JD 台账，记录看过的岗位、要求、匹配点和简历定制方向 | 个人完整履历、通用教材内容 |
+| `05_总学习计划.md` | 总学习计划，维护阶段顺序、每日节奏和主题优先级 | 具体题目的长篇答案、专项 JD 的全部细节 |
+| `06_学习教材.md` | 教材主体，系统讲 Java 后端、AI 工程化和系统设计知识 | 当天进度、交接状态、可直接背诵的短答案 |
+| `07_面试答案库.md` | 面试答案库，保存可以直接口述的答案卡 | 长篇教材、完整学习路线、未经验证的项目包装 |
+| `13_项目卡.md` | `interview-assistant` 项目主卡，维护项目定位、流程、话术、追问和接管计划 | 参考项目 `interview-guide` 的成果包装、其他项目卡片 |
+| `14_项目每日回顾.md` | `interview-assistant` 每日回顾清单，维护固定自检流程、轮换主题和口述模板 | 详细源码分析、完整项目卡、其他项目复盘 |
+| `12_AI-Agent专项.md` | AI Agent 岗位专项学习计划，维护 Agent 方向能力拆解和项目改造路线 | 银行 Java 岗位包装、每日学习流水 |
+| `11_银行Java专项.md` | 银行 Java 岗位专项，维护银行业务经历表达、岗位匹配和准备重点 | AI Agent 专项路线、通用 Java 教材 |
 
 更新信息时按下面规则归档：
 
 ```text
-个人事实 -> profile.md
-新 JD -> jd-tracking.md
-总计划变化 -> java-backend-interview-plan.md
-系统知识讲解 -> java-ai-interview-study-guide.md
-可口述答案 -> knowledge-answer-bank.md
+个人事实 -> 00_个人画像.md
+新 JD -> 04_JD台账.md
+总计划变化 -> 05_总学习计划.md
+系统知识讲解 -> 06_学习教材.md
+可口述答案 -> 07_面试答案库.md
 项目话术和项目追问 -> 对应项目卡片
-interview-assistant 每日短复盘 -> interview-assistant-daily-review.md
-当天学习结果 -> study-log.md
-当前大任务、阶段、跨电脑交接 -> HANDOFF.md
-每次对话重点、刚聊到哪、下次从哪继续 -> conversation-log.md
+interview-assistant 每日短复盘 -> 14_项目每日回顾.md
+当天学习结果 -> 03_学习日志.md
+当前大任务、阶段、跨电脑交接 -> 01_交接状态.md
+每次对话重点、刚聊到哪、下次从哪继续 -> 02_对话记录.md
 Codex 应该如何协作 -> AGENTS.md
 ```
 
@@ -101,24 +101,24 @@ git pull
 然后按顺序阅读：
 
 ```text
-1. HANDOFF.md：先确认当前大任务、阶段和下一步
-2. conversation-log.md：再接上最近一次聊天进度和暂停点
-3. study-log.md：需要复盘学习结果时再看最近一条
-4. java-backend-interview-plan.md：确认当前学习阶段和默认推进顺序
+1. 01_交接状态.md：先确认当前大任务、阶段和下一步
+2. 02_对话记录.md：再接上最近一次聊天进度和暂停点
+3. 03_学习日志.md：需要复盘学习结果时再看最近一条
+4. 05_总学习计划.md：确认当前学习阶段和默认推进顺序
 ```
 
-继续学习时以 `conversation-log.md` 最新记录里的“下次接续”为直接起点，`HANDOFF.md` 负责判断当前大任务，不要只凭聊天记忆回答。
+继续学习时以 `02_对话记录.md` 最新记录里的“下次接续”为直接起点，`01_交接状态.md` 负责判断当前大任务，不要只凭聊天记忆回答。
 
 ### 每次结束学习后
 
-1. 更新 `study-log.md`。
-2. 如果大任务、阶段、阻塞点或跨电脑交接信息变化，更新 `HANDOFF.md`。
-3. 每次结束一轮关键对话、暂停或换设备，在 `conversation-log.md` 追加一条对话重点和下次接续点。
+1. 更新 `03_学习日志.md`。
+2. 如果大任务、阶段、阻塞点或跨电脑交接信息变化，更新 `01_交接状态.md`。
+3. 每次结束一轮关键对话、暂停或换设备，在 `02_对话记录.md` 追加一条对话重点和下次接续点。
 4. 提交并推送：
 
 ```bash
 git status
-git add AGENTS.md README.md HANDOFF.md study-log.md conversation-log.md profile.md jd-tracking.md java-backend-interview-plan.md java-ai-interview-study-guide.md knowledge-answer-bank.md ai-agent-jd-study-plan.md bank-java-jd-positioning.md interview-assistant-project-card.md .gitignore
+git add AGENTS.md README.md 00_个人画像.md 01_交接状态.md 02_对话记录.md 03_学习日志.md 04_JD台账.md 05_总学习计划.md 06_学习教材.md 07_面试答案库.md 08_题库入口.md 09_题库题目册.md 10_题库答案册.md 11_银行Java专项.md 12_AI-Agent专项.md 13_项目卡.md 14_项目每日回顾.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
@@ -133,9 +133,9 @@ cd study-tools
 然后先读：
 
 ```text
-HANDOFF.md
-conversation-log.md
-study-log.md
+01_交接状态.md
+02_对话记录.md
+03_学习日志.md
 ```
 
 ## Codex 使用约定
@@ -143,19 +143,19 @@ study-log.md
 对 Codex 说：
 
 ```text
-我准备学习了，先拉取最新代码，然后按 HANDOFF.md 和 conversation-log.md 继续上次进度。
+我准备学习了，先拉取最新代码，然后按 01_交接状态.md 和 02_对话记录.md 继续上次进度。
 ```
 
 或者：
 
 ```text
-先阅读 HANDOFF.md 获取当前大任务，再阅读 conversation-log.md 接上聊天进度，接着帮我继续今天的 Java 面试复习。
+先阅读 01_交接状态.md 获取当前大任务，再阅读 02_对话记录.md 接上聊天进度，接着帮我继续今天的 Java 面试复习。
 ```
 
 或者：
 
 ```text
-根据 HANDOFF.md，帮我继续接管 interview-assistant 项目，今天只做一个小切片。
+根据 01_交接状态.md，帮我继续接管 interview-assistant 项目，今天只做一个小切片。
 ```
 
 项目相关任务可以这样说：
@@ -172,5 +172,5 @@ study-log.md
 - 面向 AI Agent JD 时，每个八股还要额外回答：它如何服务 Agent 产品落地？
 - 面向银行 Java JD 时，每个八股要额外回答：它如何服务开户、存入、支取、数币等交易系统？
 - 每次换电脑前必须更新 handoff。
-- 如果刚结束一段关键对话，也要更新 `conversation-log.md`，方便下一台设备快速接上。
+- 如果刚结束一段关键对话，也要更新 `02_对话记录.md`，方便下一台设备快速接上。
 - `interview-guide` 是导师项目/参考项目，不写入个人简历项目经历；个人项目只围绕 `interview-assistant` 讲真实实现和接管计划。

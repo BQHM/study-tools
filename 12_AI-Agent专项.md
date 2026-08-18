@@ -141,7 +141,7 @@ interview-assistant 项目
 
 产出：
 
-- `knowledge-answer-bank.md` 新增 AI 结构化输出和失败兜底答案卡。
+- `07_面试答案库.md` 新增 AI 结构化输出和失败兜底答案卡。
 - `interview-assistant` 简历分析链路图。
 
 ### 第 2 周：Tool Calling 和工具编排
@@ -190,7 +190,7 @@ makeStudyPlanTool
 
 项目落地：
 
-- 把 `knowledge-answer-bank.md` 作为第一版知识库来源。
+- 把 `07_面试答案库.md` 作为第一版知识库来源。
 - 设计 `user_weakness_memory` 表或等价实体。
 - 用户答错后，把知识点、错误原因、下次复习时间写入记忆。
 
