@@ -2,6 +2,8 @@
 
 > 生成日期：2026-06-21
 >
+> 最近更新：2026-08-20（补充 MCP / A2A 基础认知，并明确尚未在个人项目中落地）
+>
 > 来源：用户提供的 AI Agent 工程师 JD 截图。
 >
 > 目标：把现有 Java 后端面试复习，调整为更贴近“AI Agent 工程化落地”的学习路线。
@@ -38,6 +40,7 @@ AI Agent 工程师。
 Java 后端基本盘
 + LLM 应用开发
 + Agent 工作流编排
++ MCP / A2A 协议接入
 + B 端产品落地协作
 + 技术方案表达
 ```
@@ -47,6 +50,8 @@ Java 后端基本盘
 ```text
 八股知识点 -> Agent 项目中的工程问题 -> 能讲方案、风险和取舍
 ```
+
+补充：MCP（Model Context Protocol）用于标准化 Agent 与工具/数据的连接，A2A（Agent-to-Agent）用于 Agent 之间的互操作，两者关注的连接层级不同。当前先掌握概念、边界和安全问题；具体版本、生态支持和 SDK 状态在面试前以官方最新资料为准。
 
 ## 3. 能力模型
 
@@ -59,7 +64,8 @@ Java 后端基本盘
 | 记忆增强 | 保存用户历史和偏好 | 短期会话、长期记忆、画像表 | 薄弱知识点记忆 |
 | 自主规划 | 拆解多步骤任务并执行 | Plan-and-Execute、状态机 | 生成学习计划并追踪进度 |
 | 多模态交互 | 文件、图片、语音等输入 | 文件解析、OCR/ASR 基本认知 | 简历文件、后续语音面试 |
-| 大模型生态 | 了解主流框架和实践 | Spring AI、LangChain、LangGraph、Dify、Coze | Java 后端优先用 Spring AI |
+| 协议接入 | 用标准协议连接工具与 Agent | MCP（agent→tool）、A2A（agent→agent） | 工具以 MCP Server 暴露、多 Agent 协作 |
+| 大模型生态 | 了解主流框架和实践 | Spring AI 2.x、LangChain、LangGraph、Dify、Coze | Java 后端优先用 Spring AI |
 
 ## 4. 当前优势和短板
 
@@ -92,6 +98,7 @@ interview-assistant 项目
 -> Java 后端八股
 -> LLM 工程化
 -> Tool Calling
+-> MCP / A2A 协议
 -> RAG 和 Memory
 -> Agent 工作流
 -> 技术方案和项目表达
@@ -156,6 +163,7 @@ interview-assistant 项目
 - 工具入参、出参、异常处理。
 - 工具选择和权限控制。
 - 工具调用日志。
+- MCP 基础：用 Spring AI 2.x MCP Server Starter 把工具暴露成标准服务。
 
 项目工具设计：
 
@@ -172,6 +180,7 @@ makeStudyPlanTool
 
 - 先不急着全实现，先写工具清单和接口草图。
 - 选择 1 个工具做最小闭环，例如 `generateQuestionTool`。
+- 有能力时，把其中 1 个工具用 Spring AI MCP Server Starter 暴露，验证客户端能发现并调用，体验 MCP 的“工具即服务”。
 
 ### 第 3 周：RAG 和 Memory
 
@@ -227,8 +236,52 @@ makeStudyPlanTool
 - 一张流程图。
 - 一版 1 分钟项目话术。
 - 5 个项目追问答案。
+- 能用第 8 节模板讲清 MCP / A2A 在项目里的位置。
 
-## 8. interview-assistant 改造方向
+## 8. MCP 与 A2A 速通（2026 必备）
+
+> 更新于 2026-08-20。当前目标是建立直觉和表达边界，不把“了解协议”说成“已经完成项目落地”。具体版本和厂商支持情况在使用前以官方文档为准。
+
+### 8.1 MCP（Model Context Protocol）
+
+一句话答案：
+
+```text
+MCP 是把“AI 应用连接外部工具、数据、系统”这件事标准化的开放协议，相当于 AI 世界的 USB-C 接口。
+```
+
+展开要点：
+
+- 解决什么问题：每个 AI 应用接数据库、文件、搜索、业务系统时都要自己写一套工具接入逻辑，MCP 用统一协议替代，一次接入、到处复用。
+- 组成：MCP Client 和 MCP Server。Server 暴露工具/资源/提示，Client（AI 应用）发现并调用。
+- 传输：支持 STDIO、SSE、Streamable-HTTP 等。
+- Java 落地方向：Spring AI 2.x 提供 MCP Client/Server 相关能力，可以作为后续实验方向；`interview-assistant` 当前还没有接入 MCP。
+- 与 Tool Calling 的关系：Tool Calling 是模型能力（模型决定调用哪个函数）；MCP 是工具接入协议（怎么把工具暴露给 AI 应用）。二者互补：先用 MCP 把工具接进来，再靠 Tool Calling 让模型调用。
+- 常见追问：MCP 里怎么保证安全？（权限、作用域、Server 只暴露最小工具集）；工具返回失败 Agent 怎么办？（错误结构 + 重试/降级）。
+
+### 8.2 A2A（Agent-to-Agent）
+
+一句话答案：
+
+```text
+A2A 是让不同框架、不同团队开发的 Agent 之间能够发现能力、委托任务并交换结果的开放协议。
+```
+
+展开要点：
+
+- 与 MCP 的关系：**MCP 管 Agent 到工具的连接，A2A 管 Agent 到 Agent 的连接**，官方明确两者互补、不是竞争。
+- 解决的问题：Agent 由不同团队用 LangGraph、CrewAI、自定义框架开发，互相之间无法协作；A2A 提供统一通信语言（发现、任务委托、结果共享）。
+- 定位边界：它不是 Agent 开发框架，不是子 Agent/工具调用协议，也不替代 MCP。
+- 生态和 SDK 状态变化较快，实际选型前需要查官方文档，当前不把某个版本或 Java SDK 作为已经掌握的项目经验。
+- 面试表达：先能说清“MCP 连接工具，A2A 连接 Agent”，再说明自己尚未完成 A2A 落地。
+
+### 8.3 面试一口回答模板
+
+```text
+AI Agent 工程化里，我关注两层连接：工具层可以用 MCP 标准化 Agent 对后端能力、数据库和知识库的访问，Agent 之间的协作可以用 A2A。MCP 偏工具和数据接入，A2A 偏 Agent 互操作。我目前先完成了 Spring AI 的模型调用、结构化输出和规则兜底，MCP/A2A 仍处于学习和后续实验阶段。
+```
+
+## 9. interview-assistant 改造方向
 
 项目新定位：
 
@@ -261,7 +314,7 @@ AI 面试准备 Agent
 5. 基于答案库的简化 RAG。
 6. Agent 生成下一轮学习计划。
 
-## 9. 八股和 Agent 项目的绑定
+## 10. 八股和 Agent 项目的绑定
 
 | 八股主题 | Agent 项目中的对应问题 |
 | --- | --- |
@@ -276,19 +329,19 @@ AI 面试准备 Agent
 | Spring AOP | 限流、日志、权限校验如何统一处理？ |
 | JVM 排查 | AI 服务调用堆积导致线程和内存问题怎么定位？ |
 
-## 10. 面试定位话术
+## 11. 面试定位话术
 
 30 秒版本：
 
-我现在的方向是 Java 后端加 AI Agent 工程化。我不做模型训练，重点是把大模型能力落到业务系统里，比如 Prompt 模板、结构化输出、工具调用、RAG、用户记忆、异步任务、降级和成本控制。我正在把 `interview-assistant` 改造成 AI 面试准备 Agent，用它练习从需求拆解、后端实现到项目表达的完整流程。
+我现在的方向是 Java 后端加 AI 应用工程化。我不做模型训练，重点学习把大模型能力接入业务系统，例如 Prompt 模板、结构化输出、工具调用、RAG、用户记忆、异步任务、降级和成本控制。`interview-assistant` 当前已经完成模型调用、Skill 出题和规则兜底，MCP、Memory、RAG 和完整 Agent 工作流仍是后续计划。
 
 1 分钟版本：
 
-我主要走 Java 后端和 AI 应用工程方向。传统后端能力上，我重点复习 Spring Boot、MySQL、Redis、线程池、MQ 和 JVM 排查；AI 工程化上，我关注 LLM 接入、结构化输出、Tool Calling、RAG、Memory 和 Agent 工作流。我的项目 `interview-assistant` 原来是一个智能面试助手 MVP，现在我准备把它改造成 AI 面试准备 Agent：它能读取简历，结合 JD 分析薄弱点，生成学习计划，调用知识库出题，评估用户答案，并记录长期薄弱点。这个项目能比较好地对应 AI Agent 岗位里“从原型到上线落地”的要求。
+我主要走 Java 后端和 AI 应用工程方向。传统后端能力上，我重点复习 Spring Boot、数据库、Redis、线程池、MQ 和 JVM 排查；AI 工程化上，我正在学习 LLM 接入、结构化输出、Tool Calling、RAG、Memory 和 Agent 工作流，也了解 MCP 与 A2A 分别解决工具接入和 Agent 协作问题。`interview-assistant` 当前能读取简历、生成 Skill 定向题目、评估答案并生成报告；结合 JD 分析、知识库、长期记忆和 MCP/A2A 还没有完成，属于后续演进计划。
 
-## 11. 每日学习闭环
+## 12. 单次学习闭环
 
-每天只推进一个主题：
+每次只推进一个主题：
 
 ```text
 1. 学一个八股或 Agent 工程主题。
