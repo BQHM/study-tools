@@ -20,9 +20,9 @@ https://github.com/BQHM
 
 1. 恢复 Java 后端基本盘：集合、并发、JVM、Spring、MySQL、Redis、MQ。
 2. 把已有项目从“AI 辅助产物”接管成自己能讲清楚的工程资产。
-3. 准备一个小而硬的高并发下单/预约项目，逐步掌握限流、库存预热、Redis Lua、MQ、幂等、压测。
-4. 学习 AI 工程化能力：LLM 接入、Prompt、结构化输出、RAG、幻觉处理、降级和成本控制。
-5. 面向 AI Agent 工程师 JD，强化 Tool Calling、Memory、Planning、RAG、Agent 工作流和技术方案表达。
+3. 以 `interview-assistant` 为载体，掌握 AI Agent 应用工程化：LLM 接入、结构化输出、Tool Calling、状态管理、RAG、Memory、评估、降级和成本控制。
+4. 用 Java 后端能力支撑 Agent 产品：Spring、数据库、Redis、并发、MQ、日志和测试。
+5. 保留银行 Java 业务线，按真实岗位需要复习交易一致性、幂等、流水和数币业务表达。
 
 ## 文档索引
 
