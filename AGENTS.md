@@ -343,7 +343,8 @@ docs: add answer cards
 ```text
 先阅读 01_交接状态.md 获取当前大任务，
 再阅读 02_对话记录.md 接上聊天进度，
-然后阅读 05_总学习计划.md 第一阶段 Day 1，
-帮助用户整理 interview-assistant 项目卡片，
-并写出 30 秒、1 分钟、3 分钟项目话术。
+然后按 05_总学习计划.md 和 12_AI-Agent专项.md 的当前顺序推进，
+先让用户区分 ChatBot、Workflow 和 Agent，
+再判断 interview-assistant 当前属于哪一种，
+之后学习结构化输出的格式、结构和业务三层校验。
 ```

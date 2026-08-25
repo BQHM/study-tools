@@ -1,381 +1,327 @@
-# AI Agent 工程师 JD 对齐学习计划
+# AI Agent 工程师专项
 
-> 生成日期：2026-06-21
+> 最近更新：2026-08-25。
 >
-> 最近更新：2026-08-25（调整为主线学习计划，并补充 AI Agent 工程化教学方式；MCP / A2A 仍未在个人项目中落地）
+> 用途：维护 AI Agent 岗位能力模型、技术边界、项目演进和面试表达。具体执行顺序以 `05_总学习计划.md` 为准。
 >
-> 来源：用户提供的 AI Agent 工程师 JD 截图。
->
-> 目标：以 AI Agent 应用工程化为主线，把 Java 后端能力变成支撑 Agent 产品落地的工程底座。
+> 官方核验：Spring AI 当前参考文档为 2.0.1；MCP 最新规范页面显示版本 `2026-07-28`。版本变化快，开发前必须再次核验。
 
-## 1. JD 关键信息
+## 1. 岗位本质
 
-岗位：
-
-AI Agent 工程师。
-
-岗位属性：
-
-- 地点：无锡。
-- 年限：1-3 年。
-- 学历：本科。
-- 方向：机器学习类 AI，B 端产品。
-
-岗位职责拆解：
-
-1. 参与需求拆解、技术方案评审与项目排期，推动 AI Agent 产品从原型到上线的全流程落地。
-2. 跟踪并调研 Agent 领域前沿技术，例如多模态交互、工具调用、记忆增强、自主规划，并探索落地优化方案。
-3. 持续关注大模型与 AI Agent 生态，把行业实践和创新思路融入日常开发，为产品迭代和技术突破提供支持。
-
-任职要求拆解：
-
-1. 本科及以上，计算机、软件工程、人工智能、数据科学、数学统计等相关专业。
-2. 具备良好的沟通表达和跨团队协作能力，能清晰传达技术方案与风险，高效推进项目。
-
-## 2. 岗位本质判断
-
-这个岗位不是纯算法岗，也不是传统 Java CRUD 岗，而是：
+AI Agent 工程师通常不是纯模型训练岗，也不是“会写 Prompt”就够，而是：
 
 ```text
-Java 后端基本盘
-+ LLM 应用开发
-+ Agent 工作流编排
-+ MCP / A2A 协议接入
-+ B 端产品落地协作
-+ 技术方案表达
+后端工程能力
++ 可靠 LLM 调用
++ 工具和任务编排
++ 状态与数据管理
++ 评估、可观测性和安全
++ 产品落地与技术方案表达
 ```
 
-所以学习重点要从“只刷八股”调整成：
+当前求职定位：
 
 ```text
-八股知识点 -> Agent 项目中的工程问题 -> 能讲方案、风险和取舍
+Java 后端背景的 AI 应用工程候选人，
+主攻 Java + Spring AI 的可靠 AI 应用和 Agent 工程化。
 ```
 
-补充：MCP（Model Context Protocol）用于标准化 Agent 与工具/数据的连接，A2A（Agent-to-Agent）用于 Agent 之间的互操作，两者关注的连接层级不同。当前先掌握概念、边界和安全问题；具体版本、生态支持和 SDK 状态在面试前以官方最新资料为准。
+不能包装成：
 
-## 3. 能力模型
+- 模型训练或算法专家。
+- 已上线完整 Agent 平台。
+- 已完成 RAG、Memory、MCP、A2A 或多 Agent 项目落地。
+- 独立从零完成全部 AI 辅助代码。
 
-| JD 能力 | 具体含义 | 对应学习内容 | 项目落点 |
-| --- | --- | --- | --- |
-| 需求拆解 | 把业务目标拆成可开发任务 | 需求分析、接口设计、任务排期 | `interview-assistant` 功能切片 |
-| 方案评审 | 讲清方案、风险、取舍 | 技术方案文档、异常场景、降级 | AI 分析、面试评估、RAG 方案 |
-| Agent 原型上线 | 从 Demo 到可用后端服务 | Controller、Service、DB、状态、日志 | 面试准备 Agent |
-| 工具调用 | Agent 调用后端能力 | Function Calling / Tool Calling | 简历分析工具、出题工具、评分工具 |
-| 记忆增强 | 保存用户历史和偏好 | 短期会话、长期记忆、画像表 | 薄弱知识点记忆 |
-| 自主规划 | 拆解多步骤任务并执行 | Plan-and-Execute、状态机 | 生成学习计划并追踪进度 |
-| 多模态交互 | 文件、图片、语音等输入 | 文件解析、OCR/ASR 基本认知 | 简历文件、后续语音面试 |
-| 协议接入 | 用标准协议连接工具与 Agent | MCP（agent→tool）、A2A（agent→agent） | 工具以 MCP Server 暴露、多 Agent 协作 |
-| 大模型生态 | 了解主流框架和实践 | Spring AI 2.x、LangChain、LangGraph、Dify、Coze | Java 后端优先用 Spring AI |
+## 2. ChatBot、Workflow 与 Agent
 
-## 4. 当前优势和短板
+### ChatBot
 
-当前优势：
+主要根据用户输入生成回复，可以有多轮上下文，但通常不负责完成复杂任务。
 
-- 有 Java 后端学习计划和答案库。
-- 已经有 `interview-assistant` 作为 AI 应用项目载体。
-- 项目里已有 Spring AI、Prompt 模板、结构化输出、AI 失败兜底。
-- 有跨电脑 handoff 和学习日志，适合长期迭代。
+### Workflow
 
-当前短板：
+步骤主要由程序预先定义，模型在指定节点执行分析、分类或生成。它更可控、可测试，也更适合多数业务系统的第一版。
 
-- Agent 概念还没有形成系统表达。
-- Tool Calling、Memory、Planning、RAG 还没有落到项目代码或方案里。
-- 八股和 AI Agent 项目的关联还不够强。
-- 技术方案评审、风险表达和排期能力需要补文档化训练。
+### Agent
 
-## 5. 学习主线调整
+模型围绕目标，根据当前状态和观察动态决定下一步，可能调用工具、更新状态、请求人工确认并继续执行。
 
-原主线：
+工程原则：
 
 ```text
-项目深挖 -> Java/MySQL/Redis 八股 -> Spring -> 系统设计 -> 高并发 -> JVM
+能用普通代码解决，就不用模型。
+能用固定 Workflow 解决，就不急着上动态 Agent。
+单 Agent 能解决，就不急着上多 Agent。
 ```
 
-当前主线：
+`interview-assistant` 当前属于：
 
 ```text
-interview-assistant 真实代码接管
--> LLM 调用、结构化输出和安全边界
--> Tool Calling 与工具权限
--> Workflow / Agent 状态编排
--> RAG、Memory、评估和可观测性
--> 异步任务、限流、重试、成本控制
--> Java 后端支撑与技术方案表达
+AI 应用 + 固定业务 Workflow
 ```
 
-注意：不是放弃 Java，而是不再先按 Java 八股目录线性刷题；每个 Java 知识点都要绑定 Agent 服务里的具体工程问题。
+它已有简历解析、AI 分析、Skill 定向出题、答案评估和报告生成，但尚未具备通用的动态工具选择、任务规划、Agent 运行状态、暂停恢复和人工审批闭环。
 
-## 6. AI Agent 教学方式
+## 3. 能力优先级
 
-每次只学习一个小闭环，严格按以下顺序：
+### P0：求职和项目必须掌握
 
-1. 先用人话说明这个能力解决什么问题。
-2. 再讲最小原理和关键术语，避免只背名词。
-3. 查看 `interview-assistant` 中对应的真实代码、接口或数据模型；没有真实代码时，明确标记为实验或规划。
-4. 用一个最小 Demo 验证成功、失败和边界场景。
-5. 用面试题检查事实、原理、项目关联和取舍。
-6. 用户回答后严格指出错误和缺失，再用相邻难度的问题复问。
+1. ChatBot、Workflow、Agent 的边界和选型。
+2. Prompt、结构化输出、Schema 和业务校验。
+3. 超时、有限重试、降级、Token/成本和上下文管理。
+4. Tool Calling：工具 Schema、权限、参数、幂等和错误处理。
+5. Workflow 状态机、异步任务、暂停恢复和失败补偿。
+6. Tracing、Metrics、Prompt/模型版本和 Agent Evals。
+7. Guardrails、Prompt Injection、数据隔离、工具安全和人工审批。
 
-当前不同时学习多个框架：项目优先使用 Java + Spring AI；LangChain、LangGraph、Dify、Coze 等先掌握概念和选型差异，只有岗位或实验需要时再展开。
+### P1：形成完整 AI 应用能力
 
-每个主题的过关标准：
+1. RAG：切分、元数据、召回、过滤、重排、引用和评估。
+2. Memory：会话上下文、业务长期记忆、生命周期和隐私。
+3. Java 后端可靠性：Spring、MySQL、Redis、线程池、MQ、测试和 JVM。
+
+### P2：有需求再落地
+
+1. MCP Client/Server 小实验。
+2. 多模态输入。
+3. 更复杂的模型路由和长任务执行。
+
+### P3：当前只了解
+
+1. A2A。
+2. 多 Agent 协作。
+3. 同时深入多个 Agent 框架。
+
+## 4. 可靠 LLM 调用
+
+结构化输出不是“模型返回 JSON 就结束”。必须经过：
 
 ```text
-能说清解决什么问题 -> 能画出调用链 -> 能解释失败场景
--> 能修改一处代码或配置 -> 能回答至少 3 个追问
+Provider 原生结构化输出（可用时）
+-> JSON Schema / DTO 转换
+-> 格式校验
+-> 字段、类型、枚举校验
+-> 业务规则校验
+-> 有限重试或规则兜底
+-> 持久化
 ```
 
-## 7. 八股优先级调整
+三层校验：
 
-为了适配这个 JD，八股学习优先级调整为：
+- 格式：JSON 是否可解析。
+- 结构：字段、类型、枚举、必填项是否合法。
+- 业务：分数范围、题量、Skill 配额、数据归属和内容是否有效。
 
-1. Spring Boot、REST 接口、参数校验、统一响应、异常处理。
-2. MySQL 表设计、索引、事务、唯一约束。
-3. Redis 缓存、限流、会话状态、分布式锁。
-4. 线程池、异步任务、MQ。
-5. HashMap、ConcurrentHashMap、ThreadLocal。
-6. JVM 排查基础。
+重试原则：
 
-原因：
+- 网络抖动、限流、临时服务错误可以有限重试，并使用退避和抖动。
+- 参数错误、权限错误、确定性的业务校验失败不应盲目重试。
+- 重试必须有次数、总耗时和成本上限。
 
-- Agent 产品落地首先要有稳定后端服务。
-- LLM 调用需要异步、限流、重试、降级和日志。
-- Memory、RAG、答题记录都离不开数据库设计。
-- Tool Calling 需要接口设计、权限控制和异常处理。
+## 5. Tool Calling
 
-## 8. 分阶段 JD 适配计划
-
-### 第 1 周：LLM 应用工程基础
-
-目标：
-
-把“调用大模型”从 Demo 变成稳定后端能力。
-
-学习内容：
-
-- 大模型 API 调用。
-- Prompt 模板。
-- 结构化输出 JSON。
-- 超时、重试、降级。
-- Token 成本和日志。
-
-项目落地：
-
-- 复盘 `ResumeGradingService`。
-- 写清 AI 简历分析成功路径和失败路径。
-- 准备回答：AI 输出不稳定怎么办？
-
-产出：
-
-- `07_面试答案库.md` 新增 AI 结构化输出和失败兜底答案卡。
-- `interview-assistant` 简历分析链路图。
-
-### 第 2 周：Tool Calling 和工具编排
-
-目标：
-
-让 Agent 能调用后端工具，而不是只聊天。
-
-学习内容：
-
-- Function Calling / Tool Calling。
-- 工具入参、出参、异常处理。
-- 工具选择和权限控制。
-- 工具调用日志。
-- MCP 基础：用 Spring AI 2.x MCP Server Starter 把工具暴露成标准服务。
-
-项目工具设计：
+Tool Calling 的边界：
 
 ```text
-parseResumeTool
-analyzeResumeTool
-generateQuestionTool
-evaluateAnswerTool
-searchKnowledgeTool
-makeStudyPlanTool
+模型负责选择工具和生成候选参数；
+程序负责校验、授权、真实执行、审计和错误处理。
 ```
 
-项目落地：
-
-- 先不急着全实现，先写工具清单和接口草图。
-- 选择 1 个工具做最小闭环，例如 `generateQuestionTool`。
-- 有能力时，把其中 1 个工具用 Spring AI MCP Server Starter 暴露，验证客户端能发现并调用，体验 MCP 的“工具即服务”。
-
-### 第 3 周：RAG 和 Memory
-
-目标：
-
-让 Agent 能基于资料回答，并记住用户薄弱点。
-
-学习内容：
-
-- 文档切分。
-- Embedding。
-- 向量检索。
-- TopK 和相似度阈值。
-- 短期记忆和长期记忆。
-- 用户画像和薄弱点记录。
-
-项目落地：
-
-- 把 `07_面试答案库.md` 作为第一版知识库来源。
-- 设计 `user_weakness_memory` 表或等价实体。
-- 用户答错后，把知识点、错误原因、下次复习时间写入记忆。
-
-### 第 4 周：Agent 工作流和产品化
-
-目标：
-
-把单点能力串成可解释的 Agent 流程。
-
-学习内容：
-
-- ReAct 基本思想。
-- Plan-and-Execute。
-- 状态机。
-- 多步骤任务编排。
-- 失败回退和人工确认。
-
-项目流程：
+完整链路：
 
 ```text
-上传简历
--> Agent 分析岗位匹配度
--> 生成学习计划
--> 调用知识库出题
--> 用户回答
--> Agent 评分
--> 更新薄弱点记忆
--> 生成下一轮训练计划
+用户目标
+-> 模型请求工具
+-> 校验工具白名单、参数和用户权限
+-> 执行真实函数/API
+-> 返回结构化结果或错误
+-> 模型继续生成
+-> 记录 Trace 和审计日志
 ```
 
-产出：
+必须考虑：
 
-- 一页技术方案。
-- 一张流程图。
-- 一版 1 分钟项目话术。
-- 5 个项目追问答案。
-- 能用第 9 节模板讲清 MCP / A2A 在项目里的位置。
+- 最小权限和数据范围。
+- 输入 Schema 与业务校验。
+- 超时、幂等、并发和重试边界。
+- SSRF、任意文件访问和命令执行风险。
+- 删除、转账、发布等高风险动作的人工审批。
 
-## 9. MCP 与 A2A 速通（2026 必备）
+`interview-assistant` 第一版建议做只读工具，例如 `getResumeSummary`，不要先做删除或修改类工具。
 
-> 更新于 2026-08-20。当前目标是建立直觉和表达边界，不把“了解协议”说成“已经完成项目落地”。具体版本和厂商支持情况在使用前以官方文档为准。
+## 6. 状态与可靠性
 
-### 9.1 MCP（Model Context Protocol）
-
-一句话答案：
+Agent/Workflow 不是一个长方法调用。需要显式任务状态：
 
 ```text
-MCP 是把“AI 应用连接外部工具、数据、系统”这件事标准化的开放协议，相当于 AI 世界的 USB-C 接口。
+CREATED -> RUNNING -> WAITING_APPROVAL -> COMPLETED
+                    -> FAILED / CANCELED
 ```
 
-展开要点：
+需要设计：
 
-- 解决什么问题：每个 AI 应用接数据库、文件、搜索、业务系统时都要自己写一套工具接入逻辑，MCP 用统一协议替代，一次接入、到处复用。
-- 组成：MCP Client 和 MCP Server。Server 暴露工具/资源/提示，Client（AI 应用）发现并调用。
-- 传输：支持 STDIO、SSE、Streamable-HTTP 等。
-- Java 落地方向：Spring AI 2.x 提供 MCP Client/Server 相关能力，可以作为后续实验方向；`interview-assistant` 当前还没有接入 MCP。
-- 与 Tool Calling 的关系：Tool Calling 是模型能力（模型决定调用哪个函数）；MCP 是工具接入协议（怎么把工具暴露给 AI 应用）。二者互补：先用 MCP 把工具接进来，再靠 Tool Calling 让模型调用。
-- 常见追问：MCP 里怎么保证安全？（权限、作用域、Server 只暴露最小工具集）；工具返回失败 Agent 怎么办？（错误结构 + 重试/降级）。
+- 状态迁移和合法性校验。
+- 幂等键、唯一约束、乐观锁。
+- 暂停、恢复、取消和超时。
+- 外部模型调用与数据库事务边界。
+- 失败重试、死信、补偿和人工处理入口。
 
-### 9.2 A2A（Agent-to-Agent）
+`interview-assistant` 当前的面试会话状态可以作为第一张状态机练习图。
 
-一句话答案：
+## 7. 评估与可观测性
+
+这是 P0。AI 功能不能只用“接口返回 200”验收。
+
+### 可观测性
+
+至少记录：
 
 ```text
-A2A 是让不同框架、不同团队开发的 Agent 之间能够发现能力、委托任务并交换结果的开放协议。
+traceId、业务类型、模型、Prompt 版本、工具调用、
+Token、延迟、重试、错误类型、兜底结果、脱敏后的输入输出摘要。
 ```
 
-展开要点：
+### 评估
 
-- 与 MCP 的关系：**MCP 管 Agent 到工具的连接，A2A 管 Agent 到 Agent 的连接**，官方明确两者互补、不是竞争。
-- 解决的问题：Agent 由不同团队用 LangGraph、CrewAI、自定义框架开发，互相之间无法协作；A2A 提供统一通信语言（发现、任务委托、结果共享）。
-- 定位边界：它不是 Agent 开发框架，不是子 Agent/工具调用协议，也不替代 MCP。
-- 生态和 SDK 状态变化较快，实际选型前需要查官方文档，当前不把某个版本或 Java SDK 作为已经掌握的项目经验。
-- 面试表达：先能说清“MCP 连接工具，A2A 连接 Agent”，再说明自己尚未完成 A2A 落地。
+- 离线：Golden Set、结构正确率、相关性、评分一致性、引用正确率、拒答率。
+- 线上：成功率、P95/P99 延迟、Token/费用、兜底率、人工反馈和失败分类。
+- LLM-as-judge：可以辅助，但不能作为唯一评委；需要规则和人工抽检校准。
 
-### 9.3 面试一口回答模板
+项目最小产出：
+
+- 10-20 条脱敏测试样本。
+- AI 简历分析、出题和答案评估的质量标准。
+- Prompt/模型版本和失败分类记录。
+
+## 8. 安全与人工审批
+
+重点风险：
+
+- 直接和间接 Prompt Injection。
+- 跨用户数据泄露、RAG 权限绕过。
+- 工具越权、参数注入、SSRF、任意 URL/文件访问。
+- 敏感信息进入模型、日志或 Trace。
+- 模型触发不可逆操作。
+
+安全链路：
 
 ```text
-AI Agent 工程化里，我关注两层连接：工具层可以用 MCP 标准化 Agent 对后端能力、数据库和知识库的访问，Agent 之间的协作可以用 A2A。MCP 偏工具和数据接入，A2A 偏 Agent 互操作。我目前先完成了 Spring AI 的模型调用、结构化输出和规则兜底，MCP/A2A 仍处于学习和后续实验阶段。
+指令与数据隔离
+-> 工具白名单和最小权限
+-> 参数、身份和数据范围校验
+-> 输出校验
+-> 高风险操作人工审批
+-> 审计、告警和撤销/补偿
 ```
 
-## 10. interview-assistant 改造方向
+## 9. RAG 与 Memory
 
-项目新定位：
+### RAG
 
 ```text
-AI 面试准备 Agent
+加载和清洗
+-> 切分
+-> 元数据与权限标签
+-> Embedding 和入库
+-> 召回与过滤
+-> 重排
+-> 引用
+-> 生成与校验
+-> 评估
 ```
 
-核心能力：
+必须回答：
 
-1. 读取简历并分析岗位匹配度。
-2. 根据 JD 和简历生成学习计划。
-3. 调用知识库生成八股题和项目追问。
-4. 根据用户回答做评分和反馈。
-5. 记录用户薄弱点作为长期记忆。
-6. 下次训练优先追问薄弱知识点。
+- 如何选择 chunk 大小和重叠？
+- 如何按用户、租户和数据权限过滤？
+- 简历删除后，向量数据如何同步删除？
+- 检索错误或没有可靠来源时是否拒答？
+- 如何分别评估检索和最终答案？
 
-不要一开始做的内容：
+### Memory
 
-- 不先做完整前端。
-- 不先做语音面试。
-- 不先做复杂多 Agent。
-- 不先追求完整 RAG 平台。
+- 短期记忆：当前会话完成任务所需的上下文。
+- 长期记忆：经过确认的用户偏好、薄弱点和历史结果。
+- 知识库：外部事实资料，不等于用户记忆。
 
-最小切片顺序：
+长期记忆需要来源、置信度、修改、过期、删除和隐私授权机制。
 
-1. AI 分析结果结构化和兜底讲清楚。
-2. 面试题生成工具化。
-3. 答案评估工具化。
-4. 用户薄弱点记忆表。
-5. 基于答案库的简化 RAG。
-6. Agent 生成下一轮学习计划。
+## 10. MCP 与 A2A
 
-## 11. 八股和 Agent 项目的绑定
+### MCP：P2
 
-| 八股主题 | Agent 项目中的对应问题 |
-| --- | --- |
-| HashMap | 工具注册表、临时上下文、分类聚合怎么存？ |
-| ConcurrentHashMap | 多线程工具执行状态怎么保证安全？ |
-| ThreadLocal | 当前用户上下文如何传递和清理？ |
-| 线程池 | AI 分析和评估如何异步执行？ |
-| MySQL 索引 | 用户记忆、答题记录、会话列表怎么查得快？ |
-| 事务 | 答案保存和薄弱点更新如何保证一致？ |
-| Redis | 会话缓存、限流、热点知识点缓存怎么做？ |
-| MQ | AI 任务失败重试和削峰怎么做？ |
-| Spring AOP | 限流、日志、权限校验如何统一处理？ |
-| JVM 排查 | AI 服务调用堆积导致线程和内存问题怎么定位？ |
+MCP 标准化 AI 应用与外部工具、资源和提示之间的连接。它不负责 Agent 规划，也不会自动解决业务权限、幂等和工具安全。
 
-## 12. 面试定位话术
+当前项目先掌握 Tool Calling，后续再用 Spring AI MCP Client/Server 做一个只读工具实验。
+
+### A2A：P3
+
+A2A 用于独立 Agent 之间的能力发现、任务委托、状态和结果协作。当前单体项目没有明确跨 Agent 协作需求，不应优先投入。
+
+## 11. 框架策略
+
+主线：
+
+```text
+Java + Spring AI 2.x
+```
+
+了解但不同时深入：
+
+- LangChain / LangGraph：Python/JS 生态中的 Agent 与图编排。
+- OpenAI Agents SDK：Agent、工具、Guardrails、Handoffs、Sessions、Tracing。
+- Google ADK：多语言 Agent 开发工具包。
+- Dify / Coze：低代码 AI 应用平台。
+
+选框架前先问：项目是否真的需要它，它解决了什么复杂度，又引入了什么锁定和调试成本。
+
+## 12. interview-assistant 演进边界
+
+当前已实现：
+
+- 简历文件解析、内容 hash 去重和对象存储。
+- Spring AI 调用、结构化结果和规则兜底。
+- Skill 定向出题、答案评估、会话状态和报告聚合。
+
+当前正在接管：
+
+- 事务和并发边界。
+- 前后端接口契约。
+- 真实测试和失败场景。
+
+后续规划：
+
+1. 结构化输出三层校验和测试。
+2. AI 调用 Trace、Prompt/模型版本和质量评估。
+3. 一个只读 Tool Calling 闭环。
+4. 可暂停恢复的学习计划 Workflow。
+5. 简化 RAG 和用户薄弱点长期记忆。
+6. 有实际需求后再做 MCP；A2A 和多 Agent 暂不安排。
+
+## 13. 面试话术
 
 30 秒版本：
 
-我现在的方向是 Java 后端加 AI 应用工程化。我不做模型训练，重点学习把大模型能力接入业务系统，例如 Prompt 模板、结构化输出、工具调用、RAG、用户记忆、异步任务、降级和成本控制。`interview-assistant` 当前已经完成模型调用、Skill 出题和规则兜底，MCP、Memory、RAG 和完整 Agent 工作流仍是后续计划。
-
-1 分钟版本：
-
-我主要走 Java 后端和 AI 应用工程方向。传统后端能力上，我重点复习 Spring Boot、数据库、Redis、线程池、MQ 和 JVM 排查；AI 工程化上，我正在学习 LLM 接入、结构化输出、Tool Calling、RAG、Memory 和 Agent 工作流，也了解 MCP 与 A2A 分别解决工具接入和 Agent 协作问题。`interview-assistant` 当前能读取简历、生成 Skill 定向题目、评估答案并生成报告；结合 JD 分析、知识库、长期记忆和 MCP/A2A 还没有完成，属于后续演进计划。
-
-## 13. 单次学习闭环
-
-每次只推进一个主题：
-
 ```text
-1. 学一个八股或 Agent 工程主题。
-2. 写一句“它解决什么问题”。
-3. 讲清原理。
-4. 绑定到 interview-assistant。
-5. 写一张答案卡。
-6. 做 3 个追问。
-7. 更新日志和 handoff。
+我主要走 Java 后端和 AI 应用工程化方向，重点不是模型训练，而是把大模型能力做成可靠业务系统。我正在接管 interview-assistant，它目前是具有固定工作流的 AI 面试应用，已经完成简历分析、Skill 出题、答案评估和规则兜底。我接下来重点补结构化校验、调用追踪、评估和 Tool Calling，不会把尚未完成的 RAG、Memory 或完整 Agent 能力写成已有成果。
 ```
 
-下一次建议主题：
+## 14. 当前下一步
 
-```text
-线程池 + AI 异步任务
-```
+1. 回答 ChatBot、Workflow、Agent 的区别，并判断当前项目定位。
+2. 学习结构化输出的格式、结构和业务三层校验。
+3. 复盘 `ResumeGradingService` 的真实成功和失败路径。
+4. 设计第一个只读 Tool Calling 闭环。
 
-原因：这个主题比单独从 HashMap 继续刷更贴近 JD，可以同时覆盖 Java 并发八股和 AI Agent 产品落地。
+## 15. 官方资料
+
+- Spring AI 2.0.1：<https://docs.spring.io/spring-ai/reference/>
+- Spring AI Structured Output：<https://docs.spring.io/spring-ai/reference/api/structured-output.html>
+- Spring AI Tool Calling：<https://docs.spring.io/spring-ai/reference/api/tools.html>
+- Spring AI Observability：<https://docs.spring.io/spring-ai/reference/observability/index.html>
+- Spring AI MCP：<https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html>
+- MCP 最新规范：<https://modelcontextprotocol.io/specification/latest>
+- A2A 最新规范：<https://a2a-protocol.org/latest/specification/>
+- OpenAI Agents 指南：<https://platform.openai.com/docs/guides/agents.md>
+- Anthropic Building Effective AI Agents：<https://www.anthropic.com/research/building-effective-agents>
