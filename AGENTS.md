@@ -243,12 +243,12 @@ Codex 需要用聊天式教学：
 默认学习顺序遵循：
 
 ```text
-项目与简历深挖
--> Java 核心 / MySQL / Redis
--> Spring / 框架 / 系统设计
--> 计算机基础
--> 分布式与高并发
--> JVM
+AI 产品需求与项目接管
+-> LLM 应用可靠性
+-> Tool Calling / Workflow / 评估 / 安全
+-> Python AI 服务补充
+-> Java 后端支撑
+-> RAG / Memory / MCP
 -> 面试冲刺
 ```
 
@@ -344,7 +344,8 @@ docs: add answer cards
 先阅读 01_交接状态.md 获取当前大任务，
 再阅读 02_对话记录.md 接上聊天进度，
 然后按 05_总学习计划.md 和 12_AI-Agent专项.md 的当前顺序推进，
-先让用户区分 ChatBot、Workflow 和 Agent，
+先讲普通后端如何接入大模型，以及 AI 接口为什么具有不确定性，
+再让用户区分 ChatBot、Workflow 和 Agent，
 再判断 interview-assistant 当前属于哪一种，
 之后学习结构化输出的格式、结构和业务三层校验。
 ```
