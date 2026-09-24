@@ -18,11 +18,11 @@ https://github.com/BQHM
 
 ## 当前目标
 
-1. 恢复 Java 后端基本盘：集合、并发、JVM、Spring、MySQL、Redis、MQ。
-2. 把已有项目从“AI 辅助产物”接管成自己能讲清楚的工程资产。
-3. 以 `interview-assistant` 为载体，掌握 AI 产品研发和 Agent 应用工程化：需求拆解、LLM 接入、结构化输出、Tool Calling、状态管理、RAG、Memory、评估、降级和成本控制。
-4. 用 Java 后端能力支撑 AI 产品，并补充 Python/FastAPI/Pydantic/pytest/Docker 等 AI 生态基础。
-5. 保留银行 Java 业务线，按真实岗位需要复习交易一致性、幂等、流水和数币业务表达。
+1. **主线**：AI 应用 / AI Agent 应用工程化，以 `interview-assistant` 和一个小 RAG 或只读 Tool Calling 闭环作为落地载体。
+2. **首要短板**：把已有银行经历从“参与过”补成“能脱稿讲清的交易链路和排错案例”——当前最高优先级，不是学新知识。
+3. **支撑线**：银行 / 金融科技 Java 后端，重点是存款账户与交易、业务规则、SQL 和问题排查的口述表达。
+4. **落地证据**：补齐 AI 应用的可量化成果——结构化输出三层校验、Tool Calling、评估集与指标。
+5. **求职约束**：无锡定居、不接受外包 / 驻场、薪资不降薪；执行细节见 `15_跳槽作战计划.md`。
 
 ## 文档索引
 
@@ -37,6 +37,7 @@ https://github.com/BQHM
 | `12_AI-Agent专项.md` | AI Agent 岗位专项：技术边界、能力优先级、Tool Calling、Workflow、评估、安全、RAG 和协议扩展 |
 | `13_项目卡.md` | `interview-assistant` 项目卡：项目定位、核心流程、三档话术、追问清单和接管计划 |
 | `14_项目每日回顾.md` | `interview-assistant` 回顾清单：每次学习前用 5-10 分钟复盘 MVC 主链路、早期模块和 AI 辅助边界 |
+| `15_跳槽作战计划.md` | 跳槽作战计划：个人定位、硬约束、目标岗位分层、时间线、简历与面试规则、学习优先级和每周执行模板 |
 | `06_学习教材.md` | 系统学习资料：Java 后端与 AI 工程化知识讲解，偏教材和长线复习 |
 | `03_学习日志.md` | 学习日志：记录每次学了什么、理解了什么、还卡在哪里、下一步做什么 |
 | `01_交接状态.md` | 大任务交接文档：跨电脑/跨会话时优先读取，记录当前大任务、阶段、已完成、未完成和下一步 |
@@ -63,6 +64,7 @@ https://github.com/BQHM
 | `14_项目每日回顾.md` | `interview-assistant` 回顾清单，维护固定自检流程、轮换主题和口述模板 | 详细源码分析、完整项目卡、其他项目复盘 |
 | `12_AI-Agent专项.md` | AI Agent 岗位专项学习计划，维护 Agent 方向能力拆解和项目改造路线 | 银行 Java 岗位包装、单次学习流水 |
 | `11_银行Java专项.md` | 银行 Java 岗位专项，维护银行业务经历表达、岗位匹配和准备重点 | AI Agent 专项路线、通用 Java 教材 |
+| `15_跳槽作战计划.md` | 跳槽执行计划，维护个人定位、时间线、简历/面试规则和执行节奏 | 个人事实明细、JD 全文、教材内容、可直接背诵的答案卡 |
 
 更新信息时按下面规则归档：
 
@@ -70,6 +72,7 @@ https://github.com/BQHM
 个人事实 -> 00_个人画像.md
 新 JD -> 04_JD台账.md
 总计划变化 -> 05_总学习计划.md
+跳槽定位、时间线、简历与面试执行规则 -> 15_跳槽作战计划.md
 系统知识讲解 -> 06_学习教材.md
 可口述答案 -> 07_面试答案库.md
 项目话术和项目追问 -> 对应项目卡片
@@ -118,7 +121,7 @@ git pull
 
 ```bash
 git status
-git add AGENTS.md README.md 00_个人画像.md 01_交接状态.md 02_对话记录.md 03_学习日志.md 04_JD台账.md 05_总学习计划.md 06_学习教材.md 07_面试答案库.md 08_题库入口.md 09_题库题目册.md 10_题库答案册.md 11_银行Java专项.md 12_AI-Agent专项.md 13_项目卡.md 14_项目每日回顾.md .gitignore
+git add AGENTS.md README.md 00_个人画像.md 01_交接状态.md 02_对话记录.md 03_学习日志.md 04_JD台账.md 05_总学习计划.md 06_学习教材.md 07_面试答案库.md 08_题库入口.md 09_题库题目册.md 10_题库答案册.md 11_银行Java专项.md 12_AI-Agent专项.md 13_项目卡.md 14_项目每日回顾.md 15_跳槽作战计划.md .gitignore
 git commit -m "docs: update interview study handoff"
 git push
 ```
