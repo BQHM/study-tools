@@ -77,12 +77,12 @@ AI 应用 + 固定业务 Workflow
 6. Workflow 状态机、异步任务、暂停恢复和失败补偿。
 7. Tracing、Metrics、Prompt/模型版本和 Agent Evals。每个指标必须能给出数字和 baseline 对比；面试明确要求量化，没有数字等于没做过。
 8. Guardrails、Prompt Injection、数据隔离、工具安全和人工审批。
+9. Python / FastAPI 最小服务能力。（2026-09-27 从 P1 提级到 P0：无锡多条 AI 应用 JD 要求“Python 与 Java 至少掌握两项”；目标是能读、能改、能验证，不转 Python 工程师。）
 
 ### P1：形成完整 AI 应用能力
 
-1. Python / FastAPI 最小服务能力。（2026-09-22 从“以后补充”提升为并行线：Python 在 JD 中出现率约 78%，目标是过初筛并能读、能改、能验证，不转 Python 工程师。）
-2. Memory：会话上下文、业务长期记忆、生命周期和隐私。
-3. Java 后端可靠性：Spring、MySQL、Redis、线程池、MQ、测试和 JVM。
+1. Memory：会话上下文、业务长期记忆、生命周期和隐私。
+2. Java 后端可靠性：Spring、MySQL、Redis、线程池、MQ、测试和 JVM。
 
 ### P2：有需求再落地
 
